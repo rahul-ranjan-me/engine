@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for scripts\controllers\byClients.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">all files</a> / <a href="index.html">scripts/controllers/</a> byClients.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">82.98% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>39/47</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">57.14% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>8/14</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">90.91% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>10/11</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">82.98% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>39/47</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">define([
+		'properties',
+		'../configs/headerClientRecommendation'
+	], 
+	function(
+		properties,
+		headerClientRecommendation
+		) {
+		
+	    function ByClientsCtrl($scope, $compile, httpCalls, selectedData){
+	    	this.$scope = $scope;
+	    	this.$compile = $compile;
+	    	this.httpCalls = httpCalls;
+	    	this.selectedData = selectedData;
+	    	this.filterData();
+	    	this.scopedMethods();
+	    	this.$scope.clientSearchAPI = properties.doClientNameSearch;
+	    	this.$scope.searchPayload = {
+	    		name : '',
+	    		region : '',
+	    		type : '',
+	    		institutionType : ''
+	    	};
+&nbsp;
+	    	this.$scope.recommendedByClient = {
+	    		headerData : headerClientRecommendation,
+	    		grid : []
+	    	};
+&nbsp;
+	    	<span class="missing-if-branch" title="if path not taken" >I</span>if(this.selectedData.searchPayload.get().length){
+<span class="cstat-no" title="statement not covered" >	    		this.$scope.searchPayload = this.selectedData.searchPayload.get()[0];</span>
+<span class="cstat-no" title="statement not covered" >	    		this.$scope.searchByClient(true);</span>
+	    	}
+	    }
+&nbsp;
+		ByClientsCtrl.prototype.filterData = function(){
+			<span class="missing-if-branch" title="else path not taken" >E</span>if(Object.keys(this.selectedData.filtersCached.get()).length &lt; 1){
+				this.httpCalls.getFilterdData(null, null, function(resp){
+					this.selectedData.filtersCached.set(resp);
+					this.$scope.prefetchedFilters = resp;
+				}.bind(this));
+			}else{
+<span class="cstat-no" title="statement not covered" >				this.$scope.prefetchedFilters = this.selectedData.filtersCached.get();</span>
+			}
+		};
+&nbsp;
+		ByClientsCtrl.prototype.scopedMethods = function(isSet){
+			this.$scope.searchByClient = function(){
+				var params = {};
+				for(var i in this.$scope.searchPayload){
+					<span class="missing-if-branch" title="if path not taken" >I</span>if(this.$scope.searchPayload[i]){
+<span class="cstat-no" title="statement not covered" >						params[i] = this.$scope.searchPayload[i];</span>
+					}
+				}
+&nbsp;
+				this.httpCalls.doRecommClientSearch(params, null, function(data){
+					this.$scope.recommendedByClient.grid = data;
+					this.$scope.$broadcast('recommendedByClient', this.$scope.recommendedByClient);
+					this.gridFixes('recommendedByClient', 624);
+				}.bind(this));
+				<span class="missing-if-branch" title="else path not taken" >E</span>if(!isSet){
+					this.selectedData.searchPayload.set([this.$scope.searchPayload]);
+				}
+			}.bind(this);
+&nbsp;
+			this.$scope.isSearchDisabled = function(){
+				for(var i in this.$scope.searchPayload){
+					if(this.$scope.searchPayload[i] &amp;&amp; this.$scope.searchPayload[i].length &gt; 0){
+						return false;
+					}
+				}
+&nbsp;
+				return true;
+			}.bind(this);
+&nbsp;
+			this.$scope.onClientRowSelect = function(row){
+				window.location.hash = '/ClientDetails/'+row[0].clientId;
+			};
+		};
+&nbsp;
+		ByClientsCtrl.prototype.gridFixes = function(gridId, height){
+	    	var grid = $('.'+gridId);
+	    	var delay = window.setTimeout(<span class="fstat-no" title="function not covered" >function(){</span>
+<span class="cstat-no" title="statement not covered" >	    		if(grid.find('.grid-vertical-scroll').height() &lt; height){</span>
+<span class="cstat-no" title="statement not covered" >		    		grid.find('.header-container').css('padding-right', 0);</span>
+				}else{
+<span class="cstat-no" title="statement not covered" >					grid.find('.header-container').css('padding-right', 12);</span>
+				}
+<span class="cstat-no" title="statement not covered" >				clearTimeout(delay);</span>
+			},200);
+	    };
+&nbsp;
+	    return ByClientsCtrl;
+	}
+);
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Sep 09 2016 16:33:29 GMT+0530 (India Standard Time)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

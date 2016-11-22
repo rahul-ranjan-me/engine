@@ -1,0 +1,55 @@
+.typeahead{
+    position: relative;
+}
+
+.typeahead .form-control{
+    font-size: 12px;
+}
+
+.typeahead .suggestion{
+    position: absolute;
+    min-width: 240px;
+    width: 100%;
+    background: #fff;
+    color: #333;
+    font-size: 12px;
+    height: 0;
+    overflow: auto;
+    opacity: 0;
+    z-index: 5;
+    top: 49px;
+    box-shadow: 0px 4px 9px 0px rgba(0,0,0,.7);
+    transition: all .2s linear;
+}
+
+.typeahead .suggestion ul{
+    list-style-type: none;
+}
+
+.typeahead .suggestion li{
+    display: block;
+    padding:5px;
+    margin: 0;
+    cursor: default;
+}
+
+.typeahead .suggestion li:hover{
+    background: #ccc
+}
+
+.typeahead .input-container{
+    position: relative;
+    display: block;
+}
+
+.typeahead .input-container input{
+    padding-right: 25px;
+}
+
+.typeahead .input-container .glyphicon{
+    position: absolute;
+    right: 7px;
+    top: 7px;
+    color: #adadad;
+    cursor: default;
+}

@@ -1,0 +1,24 @@
+<div class="form-group typeahead" ng-click="preventEvent($event)">
+    <label for="{{fieldLabel.toLowerCase()}}">{{fieldLabel}}</label>
+    <span class="input-container">
+        <input type="text" 
+        	class="form-control" 
+        	id = {{fieldLabel.toLowerCase()}} 
+        	name = {{fieldLabel.toLowerCase()}} 
+            placeholder="{{placeholder}}" 
+        	ng-focus="showSuggestion($event, 'show')"
+            ng-change="changeSuggestion($event, 'show')"
+        	ng-click="preventEvent($event)"
+        	ng-model="fieldLabelVal"
+        	autocomplete="false" 
+        	ng-change="makeServerCall()" />
+            <i class="glyphicon glyphicon-remove" ng-click="clear()" ng-show="fieldLabelVal" />
+    </span>
+    <div class="suggestion" ng-click="preventEvent($event)">
+    	<ul>
+	    	<li ng-repeat="(i, item) in prefetched" ng-click="selectItem(prefetched[i])">
+	    		{{prefetched[i]}}
+	    	</li>
+    	</ul>
+    </div>
+</div>

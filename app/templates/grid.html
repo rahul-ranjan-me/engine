@@ -1,0 +1,311 @@
+<div class="labGrid clearfix" ng-class="{'mobile' : mobile==true}">
+	
+	<!-- =================================
+		Action container starts here
+	=================================== -->
+
+	<div class="action-header">
+		<!-- =================================
+			Top Pagination starts here
+
+			- This pagination will be visible only in case of desktop
+		=================================== -->
+
+
+		
+		<!-- ============== Client side pagination starts here ============== -->
+		<div class="pagination-container" ng-if="(pagePos=='top' || pagePos=='both') && serverInt != 'true' && mobile == false">
+			<nav>
+				<ul class="pagination">
+					<li ng-class="{'disabled': curPage == 0}">
+						<a href="#" aria-label="Previous" ng-click="prev($event)">
+							<span aria-hidden="true">&laquo;</span>
+						</a>
+					</li>
+
+					<li ng-repeat="(i, page) in pages" ng-class="{'active': curPage == i}"><a href="#" ng-click="updatePage(i, $event)">{{i+1}}</a></li>
+
+					<li ng-class="{'disabled': curPage == pages.length-1}">
+						<a href="#" aria-label="Next" ng-click="next($event)">
+							<span aria-hidden="true">&raquo;</span>
+						</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+
+		<!-- ============== Client side pagination ends here ============== -->
+
+		<!-- ============== Server side pagination starts here ============== -->
+		<div class="pagination-container" ng-if="(pagePos=='top' || pagePos=='both') && serverInt == 'true' && mobile == false && grid.totalRecords">
+			<nav>
+				<ul class="pagination">
+					<li ng-class="{'disabled': currentPage == 0}">
+						<a href="#" aria-label="Previous" ng-click="makeParams(currentPage, $event, 'prev')">
+							<span aria-hidden="true">&laquo;</span>
+						</a>
+					</li>
+					<li ng-repeat="(i, page) in pageArray | limitTo:10:params.beginPoint track by $index" ng-class="{'active': currentPage == page}"><a href="#" ng-click="makeParams(page, $event, 'page')">{{page+1}}</a></li>
+
+					<li ng-class="{'disabled': currentPage == pageArray.length-1}">
+						<a href="#" aria-label="Next" ng-click="makeParams(currentPage, $event, 'next')">
+							<span aria-hidden="true">&raquo;</span>
+						</a>
+					</li>
+
+					<li class="totalRecords">
+						<em>Records found:</em> {{grid.totalRecords}}
+					</li>
+				</ul>
+			</nav>
+		</div>
+		<!-- ============== Client side pagination ends here ============== -->
+
+
+		<!-- =================================
+			Top Pagination ends here
+		=================================== -->
+		
+	
+		<!-- ===================================================== 
+			Toogle to allow user to switch between grid and list view
+			- Visible in case of desktop only
+		===================================================== -->
+		<div class="btn-group grid-switcher" role="group" ng-if="switchView == 'true' && mobile == false">
+			<button type="button" class="btn btn-default" ng-class="{'selected' : view=='grid'}" ng-click="changeView('grid')">Grid</button>
+			<button type="button" class="btn btn-default" ng-class="{'selected' : view=='list'}" ng-click="changeView('list')">List</button>
+		</div>
+
+		<!-- ===================================================== 
+			Pagination container to allow user to jump to a particular page
+			- Visible in case of mobile only
+		===================================================== -->
+		<label ng-if="mobile==true" class="selectpage-dropdown">Please select a page: 
+
+			<!-- This dropdown will be visible in case of client interaction only -->
+			<select ng-if="(pagePos=='top' || pagePos=='both') && server != 'true'" ng-change="updatePage(curPage-1)" ng-model="curPage">
+				<option ng-repeat="(i, page) in pages">{{i+1}}</option>
+			</select>
+
+			<!-- This dropdown will be visible in case of server interaction only -->
+			<select ng-if="(pagePos=='top' || pagePos=='both') && server == 'true'" ng-change="makeParams(curPage-1, null, 'page')" ng-model="curPage">
+				<option ng-repeat="(i, page) in pageArray">{{i+1}}</option>
+			</select>
+		</label>
+		<!-- Pagination dropdown ends here -->
+
+		<!-- ===================================================== 
+			Allow user to select to sort data
+			- visible in case of mobile view only
+		===================================================== -->
+
+		<label ng-if="mobile==true" class="selectpage-dropdown">Please select to sort: 
+			<select ng-if="(pagePos=='top' || pagePos=='both')" ng-model="selectedHeader" ng-options="header.label for header in grid.headerData" ng-change="sortMe(selectedHeader)"></select>
+		</label>
+		<!-- Sorting dropdown ends here -->
+
+
+		<!-- ===================================================== 
+			Allow user to select how much data should be visible per row
+			- visible in case of desktop + list view only
+		===================================================== -->
+		<span ng-show="view == 'list' && mobile == false">
+			<label class="row-page">Row per column: <input type="text" ng-value="columnCount" ng-model="columnCount" /></label>
+		</span>
+		<!-- Row per page ends here -->
+		
+		<!-- ===================================================== 
+			Search container searching through Grid starts here
+		===================================================== -->
+
+		<!-- Server side search box with Go button
+			- Interaction requires click on Go button -->
+		<span class="search-container server" ng-if="server == 'true'">
+			<input type="text" placeholder="Filter..." class="search-box" ng-model="searchKey" />
+			<button type="button" class="btn btn-default btn-search form-control" ng-click="search(searchKey)">Go</button>
+		</span>
+
+
+		<!-- Client side search box with Go button
+			- Interaction requires change of search box -->
+		<span class="search-container client" ng-if="server != 'true'">
+			<input type="text" ng-change="search(searchKey)" placeholder="Filter..." class="search-box form-control" ng-model="searchKey" ng-value="searchKey" />
+			<!-- <span class="glyphicon glyphicon-remove clear-search" ng-show="searchKey" ng-click="clearSearch()"></span> -->
+		</span>
+
+
+		<span class="column-chooser-icon" ng-if="columnchooser == true" ng-click="columnChooser()" title="Column Chooser">
+			<i class="glyphicon glyphicon-cog"></i>
+		</span>
+
+		<!-- ===================================================== 
+			Search container searching through Grid ends here
+		===================================================== -->
+
+	</div>
+
+	<!-- =================================
+		Action container ends here
+	=================================== -->
+
+	<!-- =================================
+		Grid view ends here
+	=================================== -->
+	<div class="grid-scroll">
+		<div class="grid-view" ng-if="view=='grid' || view==null" style="width: {{gridWidth}}{{widthUnit}}">
+			<div class="header-container">
+				<ul class="grid" style="width: {{gridWidth}}{{widthUnit}}">
+					<li class="header row">
+						
+						<span class="cell collapsible" ng-if="collapsible == 'true'">&nbsp;</span>
+						
+						<span class="cell" 
+							ng-repeat="(i, header) in grid.headerData" 
+							ng-click="sortMe(header)" 
+							ng-class="{true:'sortable'}[header.sort]"
+							ng-if="i !== 'fakeUpdate'"
+							ng-style="calcStyle(header.width, grid.headerData[i].align)">
+							{{header.label}} 
+							<span ng-if="header.direction.length > 0">
+								<i ng-class="{asc:'glyphicon glyphicon-arrow-up', desc:'glyphicon glyphicon-arrow-down'}[header.direction]"></i>
+							</span>
+						</span>
+
+					</li>
+				</ul>
+			</div>
+
+			<div class="grid-container">
+				<div class="grid-vertical-scroll">
+
+					<p class="no-data" ng-if="!pageToShow.length">{{nodata}}</p>
+					<ul class="grid" ng-if="pageToShow.length" style="width: {{gridWidth}}{{widthUnit}}">
+						
+						<li class="row body" 
+						    context-menu="menuOptions"
+							ng-repeat="row in pageToShow track by $index" 
+							ng-click="clientSelect($event, row)"
+							ng-class="{'selected' : row.selected == true, 'freezed' : row.freezed == true}"
+							>
+							<span class="cell collapsible glyphicon glyphicon-chevron-right" 
+							ng-class="{'glyphicon-chevron-down': row.expand == true}"
+							ng-if="collapsible == 'true'"
+							ng-click="collapseExpand($event, row)">&nbsp;</span>
+							
+							<span class="cell css-{{i}}" ng-repeat="(i, item) in grid.headerData track by $index" ng-if="(i != 'expand' && i != 'selected')"
+							ng-style="calcStyle(grid.headerData[i].width, grid.headerData[i].align)">
+								<span ng-if="grid.headerData[i].formatWithHTML" ng-bind-html='grid.headerData[i].formatWithHTML(row[i], i, row)' compile-template></span>
+								<span ng-if="grid.headerData[i].format">{{grid.headerData[i].format(row[i], i, row)}}</span>
+								<span ng-if="!grid.headerData[i].format && !grid.headerData[i].formatWithHTML" title="{{row[i]}}">{{row[i]}}</span>
+							</span>
+							
+							<div class="nested-details" ng-if="collapsible == 'true'" ng-show="row.expand == true">
+								<ul>	
+									<li ng-repeat="(a, item) in grid.nestedHeader track by $index">
+										<strong class="nested-label">{{item}} :</strong>
+										<span class="value"><span ng-if="!row[a]">&nbsp;</span>{{row[a]}}</span>
+									</li>
+								</ul>
+								<button type="button" class="btn" 
+									ng-class="button.cssClass" 
+									ng-click="buttonClickEvent(button.event, row)"
+									ng-repeat="button in grid.buttons track by $index">
+									{{button.label}}
+								</button>
+							</div>
+
+						</li>
+
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- =================================
+		Grid view ends here
+	=================================== -->
+
+	<!-- =================================
+		List view starts here
+	=================================== --> 
+
+	<div class="list-view" ng-if="view=='list'">
+		<ul class="list-container" style="column-count:{{columnCount}}">
+			<li class="list" 
+				ng-repeat="row in pageToShow"
+				ng-click="clientSelect($event, row)">
+				<ul class="ticket">
+					<li class="css-{{i}}" ng-repeat="(i, item) in grid.headerData track by $index"
+						ng-if="(i != 'expand' && i != 'selected')"
+					>
+						<strong>{{item.label}}</strong> 
+						<span ng-if="grid.headerData[i].formatWithHTML" ng-bind-html='grid.headerData[i].formatWithHTML(row[i], i, row)' compile-template></span>
+						<span ng-if="grid.headerData[i].format">{{grid.headerData[i].format(row[i], i, row)}}</span>
+						<span ng-if="!grid.headerData[i].format && !grid.headerData[i].formatWithHTML">{{row[i]}}</span>
+					
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+
+	<!-- =================================
+		List view ends here
+	=================================== -->
+
+	<!-- =================================
+		Bottom Pagination starts here
+		- This pagination will be visible only in case of desktop
+	=================================== -->
+
+	
+	<!-- ============== Client side pagination starts here ============== -->
+	<div class="pagination-container" ng-if="(pagePos=='bottom' || pagePos=='both') && server != 'true' && mobile == false"">
+		<label class="items-page">Items per page: <input type="text" ng-value="userPaging" ng-change="itemsPerPage(userPaging)" ng-model="userPaging" /></label>
+		<nav>
+			<ul class="pagination">
+				<li ng-class="{'disabled': curPage == 0}">
+					<a href="#" aria-label="Previous" ng-click="prev($event)">
+						<span aria-hidden="true">&laquo;</span>
+					</a>
+				</li>
+
+				<li ng-repeat="(i, page) in pages" ng-class="{'active': curPage == i}"><a href="#" ng-click="updatePage(i, $event)">{{i+1}}</a></li>
+
+				<li ng-class="{'disabled': curPage == pages.length-1}">
+					<a href="#" aria-label="Next" ng-click="next($event)">
+						<span aria-hidden="true">&raquo;</span>
+					</a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+	<!-- ============== Client side pagination ends here ============== -->
+
+	<!-- ============== Server side pagination starts here ============== -->
+	<div class="pagination-container" ng-if="(pagePos=='bottom' || pagePos=='both') && server == 'true' && mobile == false"">
+		<nav>
+			<ul class="pagination">
+				<li ng-class="{'disabled': currentPage == 0}">
+					<a href="#" aria-label="Previous" ng-click="makeParams(currentPage, $event, 'prev')">
+						<span aria-hidden="true">&laquo;</span>
+					</a>
+				</li>
+				<li ng-repeat="(i, page) in pageArray" ng-class="{'active': currentPage-1 == i}"><a href="#" ng-click="makeParams(i, $event, 'page')">{{i+1}}</a></li>
+
+				<li ng-class="{'disabled': currentPage == pageArray.length}">
+					<a href="#" aria-label="Next" ng-click="makeParams(currentPage, $event, 'next')">
+						<span aria-hidden="true">&raquo;</span>
+					</a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+	<!-- ============== Client side pagination ends here ============== -->
+
+
+	<!-- =================================
+		Bottom pagination ends here
+	=================================== -->
+
+</div>

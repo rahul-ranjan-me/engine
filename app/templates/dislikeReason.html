@@ -1,0 +1,27 @@
+<div class="dislike-reason-container" ng-click="preventDefault($event)">
+	<span class="tip"><i class="glyphicon glyphicon-play"></i></span>
+	<h4>Please help us with the reason for disliking:</h4>
+	<p>Client name: <em>{{clientName}}</em></p>
+	<p class="product-name">Product name: <em>{{productName}}</em></p>
+	<form>
+		<div class="form-group">
+			<label for="reason">Select reason</label>
+			<select id="reason" 
+		 		ng-model = "payload.reason"
+		 		class="form-control"
+		 		ng-options="option for option in reasons">
+		 		<option value="">Please select</option>
+		 	</select>
+		</div>
+		<div class="form-group">
+			<label for="comments">Comment</label>
+			<textarea class="form-control" id="comment" ng-model="payload.comment"></textarea>
+		</div>
+
+		<input type="submit" 
+			class="btn btn-primary" 
+			value="Submit" 
+			ng-disabled="payload.reason.length < 1"
+			ng-click="submitDislike()" />
+	</form>
+</div>

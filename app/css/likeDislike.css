@@ -1,0 +1,96 @@
+.labGrid li.row span.cell.css-likeDislike{
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.labGrid li.row span.cell.css-likeDislike .glyphicon{
+    font-size: 18px;
+}
+
+.btnToVote{
+    width: 47%;
+    text-align: center;
+    display: inline-block;
+    position: relative;
+    top: 2px;
+    cursor: pointer;
+}
+
+.btnToVote.vote-like{
+    border-right: 1px solid #695900;
+}
+
+.btnToVote.vote-like.selected{
+    color:rgb(85, 191, 59);
+}
+
+.btnToVote.vote-dislike.selected{
+    color:rgb(255, 0, 102);
+}
+
+.dislike-reason-container{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #000;
+    padding: 10px;
+    z-index: 55;
+    width: 300px;
+    border:1px solid rgba(8,189,40,0.8);
+    box-shadow: 0 0 5px 1px rgba(0,0,0,.7);
+    white-space: normal;
+    opacity: 0;
+    transition: opacity 800ms;
+}
+
+.dislike-reason-container .tip{
+    position: absolute;
+    right: -15px;
+    top: 100px;
+}
+
+.dislike-reason-container .tip i{
+    color:rgba(8,189,40,.8);
+}
+
+.dislike-reason-container h4{
+    margin: 0 0 10px !important;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.dislike-reason-container .form-group{
+    margin-bottom: 10px;
+}
+
+.dislike-reason-container .form-control{
+    font-size: 12px;
+}
+
+.dislike-reason-container label{
+    display: block;
+    font-style: normal;
+}
+
+.dislike-reason-container textarea{
+    width: 100%;
+}
+
+
+.dislike-reason-container input[type="submit"]{
+    float: right;
+    padding: 2px 10px;
+}
+
+.dislike-reason-container p{
+    margin-bottom: 0;
+    font-size: 12px;
+}
+
+.dislike-reason-container p.product-name{
+    margin-bottom: 10px;
+}
+
+.dislike-reason-container p em{
+    color: #decf07;
+}

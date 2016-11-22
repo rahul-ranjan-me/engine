@@ -1,0 +1,18 @@
+<div class="comment-container" ng-class="{'open': open}" ng-click="preventDefault($event)">
+	<div class="btn-comment" ng-click="showNote($event)">Make a note</div>
+	<div class="comment-box">
+		<ul class="comment-list">
+			<li ng-repeat="note in notes">
+				<p>
+					<strong>Date:</strong>
+					<em>{{note.date}}</em>
+				</p>
+				<p>{{note.comment}}</p>
+			</li>			
+		</ul>
+		<div class="new-comment">
+			<textarea ng-model="comment" placeholder="Write your note here..."></textarea>
+			<input type="button" class="btn btn-primary" value="Submit" ng-disabled="!comment.length" ng-click="newComment()" />
+		</div>
+	</div>
+</div>

@@ -1,0 +1,55 @@
+<header>
+	<div class="top-header">
+		<a href="#/Summary" class="logo"><img src="static/images/IHS-Markit-logo.svg" alt="Markit" width="115" height="31" /><i class="product-name desktop-only">Recommends</i>
+		</a>
+
+		<div class="main-menu pull-right">
+			<span class="ham-menu glyphicon glyphicon-menu-hamburger" ng-click="showMenu($event)"></span>
+
+			<div class="main-menu-item" ng-click="preventEvent($event)">
+				<ul>
+					<li class="mobile-only">
+						<span class="login-badge">
+							<i class="glyphicon glyphicon-user icon-user"></i>
+							<strong>Hello <span class="username">
+								<i>{{userProfile}} </i>
+								</span>
+							</strong>
+						</span>
+					</li>
+					<li ng-repeat="item in menuItems" id="{{item.id}}" ng-click="goToPage(item.hash)"><i class="circle" style="background:{{item.color}}"></i>  {{item.label}}</li>
+					<li class="link-logout">
+						<button type="button" class="btn btn-danger btn-logout" ng-click="logout()"><i class="glyphicon glyphicon-log-out"></i> Logout</button>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+
+		<div class="login-info pull-right desktop-only">
+			<span class="login-badge" ng-click="goToPage('/Dashboard')">
+				<i class="glyphicon glyphicon-user icon-user"></i>
+				<strong>Hello <span class="username">
+					<i>{{userProfile}} </i>
+					</span>
+				</strong>
+			</span>
+			<!-- <span class="glyphicon glyphicon-triangle-top tip" ng-show="showBadgeVar"></span>
+			<div class="login-badge-dropdown" ng-click="preventEvent($event)">
+				<div class="login-badge-content">
+					<div class="badge-profile-content">
+						<i class="glyphicon glyphicon-user icon-user"></i>
+						Welcome: <strong>{{userProfile.MarkitUserFullName}}</strong>
+					</div>
+					<div class="logout-badge">
+						<button type="button" class="btn btn-danger btn-logout" ng-click="logout()">Logout</button>
+					</div>
+				</div>
+			</div> -->
+		</div>
+
+
+
+	</div>
+	
+</header>

@@ -1,0 +1,96 @@
+.comment-container{
+    float: right;
+    margin-top: 15px;
+    position: relative;
+    font-size: 12px;
+}
+
+.comment-container .btn-comment{
+    background: #000;
+    position: relative;
+    right: -15px;
+    padding: 6px 40px 6px 10px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    cursor: pointer;
+    float: right;
+    overflow: hidden;
+    z-index:3;
+    transition: width 700ms;
+    font-size: 15px;
+    width: 135px;
+}
+
+.comment-container .btn-comment:hover{
+    background:rgba(0,0,0,.5);
+}
+
+
+.comment-container .comment-box{
+    background:#000;
+    width: 0;
+    clear: both;
+    position:absolute;
+    z-index: 2;
+    top: 30px;
+    transition: height 700ms;
+    box-shadow: 0 0 5px 1px rgba(0,0,0,.7);
+    height: 0;
+    opacity: 0
+}
+
+.open.comment-container .comment-box{
+    height: 350px;
+    opacity: 1;
+    padding: 10px 0;
+    width: 250px;
+    right: -15px;
+}
+
+.open.comment-container .btn-comment{
+    width: 250px;
+    border-radius: 0;
+    background: rgba(222, 207, 7, 0.65);
+    color: #333;
+}
+
+.open.comment-container .btn-comment:hover{
+    background: rgb(206, 197, 83);
+}
+
+.comment-container .comment-box ul{
+    list-style-type: none;
+    margin-left: 0;
+    padding: 0 10px;
+    height: 225px;
+    overflow: auto;
+}
+
+.open.comment-container .new-comment{
+    padding: 0 10px;
+}
+
+.open.comment-container .new-comment textarea{
+    height: 60px;
+    width: 100%;
+    margin-bottom: 7px;
+    color: #333
+}
+
+.new-comment input[type="button"]{
+    padding: 2px 10px;
+    float: right;
+}
+
+.comment-container .comment-list li{
+    border-bottom: 1px solid #313131;
+    margin-bottom: 10px;
+}
+
+.comment-container .comment-list li p{
+    margin-bottom:5px;
+}
+
+.comment-container .comment-list li p strong{
+    color:rgba(8,189,40,.8);
+}

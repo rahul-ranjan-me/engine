@@ -1,0 +1,51 @@
+<div class="popup-container column-chooser">
+	<div class="background" ng-click="closePopup()"></div>
+	<div class="popup">
+		<div class="popup-header">
+			Column Chooser
+			<span class = "glyphicon glyphicon-remove close-popup" ng-click="closePopup()"></span>
+		</div>
+		<div class="popup-content">
+			<div class="hidden-column listCont">
+				<h5>Hidden Column</h5>
+				<ul class="list">
+					<li ng-repeat="(i, column) in forChooser.hiddenColumn track by $index" 
+						ng-class= "{'selected' : column.selected}"
+						ng-if="i !== 'fakeUpdate'"
+						ng-click="selectMe('hidden', column)">
+						{{column.label}}</li>
+				</ul>
+				<div class="order-control">
+					<span ng-click="move('up', 'hidden')"><i class="glyphicon glyphicon-chevron-up"></i></span>
+					<span ng-click="move('down', 'hidden')"><i class="glyphicon glyphicon-chevron-down"></i></span>
+				</div>
+			</div>
+			
+			<div class="column-control">
+				<span ng-click="showHide('visible')"><i class="glyphicon glyphicon-forward"></i></span>
+				<span ng-click="showHide('hidden')"><i class="glyphicon glyphicon-backward"></i></span>
+			</div>
+			<div class="visible-column listCont">
+				<h5>Visible Column</h5>
+				
+				<ul class="list">
+					<li ng-repeat="(i, column) in forChooser.visibleColumn track by $index" 
+						ng-class= "{'selected' : column.selected}"
+						ng-if="i !== 'fakeUpdate'"
+						ng-click="selectMe('visible', column)">
+
+						{{column.label}}</li>
+				</ul>
+				<div class="order-control">
+					<span ng-click="move('up', 'visible')"><i class="glyphicon glyphicon-chevron-up"></i></span>
+					<span ng-click="move('down', 'visible')"><i class="glyphicon glyphicon-chevron-down"></i></span>
+				</div>
+			</div>
+			
+		</div>
+		<div class="popup-footer">
+			<button type="button" class="btn btn-primary pull-right" ng-disabled="checkMandatoryFields()" ng-click="applyColumn()">Apply</button>
+			<button type="button" class="btn btn-secondry pull-right" ng-click="closePopup()">Cancel</button>
+		</div>
+	</div>
+</div>

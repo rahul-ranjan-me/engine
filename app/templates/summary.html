@@ -1,0 +1,113 @@
+<div class="top-container">
+
+	<header-directive headertext=" "></header-directive>
+	
+
+	<div class="content summary clearfix container">
+
+		<div class="row">
+
+			<div class="col-md-6">
+				<div class="box">
+					<div id="recommendation-types"></div>
+				</div>
+			</div>
+
+			<div class="recommendationGrid col-md-6" 
+				ng-if="mobile"
+				id="recommendationGrid">
+				<div class="box recommendation-top">
+					<h4>Top recommendations: <em class="label-heading">{{type}}</em></h4>
+					<grid-directive 
+						class="recommendationTopGrid"
+						grid="recommendationTopGrid"
+						pagesize="10000000"
+						eventkey = "recommendationTopGrid"
+						ng-if = "recommendationTopGrid"
+						nodata = "0 Record"
+						view="grid">
+					</grid-directive>
+				</div>
+			</div>
+
+
+			<div class="col-md-6">
+				<div class="box">
+					<div id="recommendation-region"></div>
+				</div>
+			</div>
+
+		</div>
+		
+		<div class="grid-wrapper row">
+			<div class="recommendationGrid" 
+				ng-class="{'col-md-6' : region, 'col-md-12' : !region}" 
+				ng-if="!mobile"
+				id="recommendationGrid">
+				<div class="box recommendation-top">
+					<h4>Top recommendations: <em class="label-heading">{{type}}</em></h4>
+					<grid-directive 
+						class="recommendationTopGrid"
+						grid="recommendationTopGrid"
+						pagesize="10000000"
+						eventkey = "recommendationTopGrid"
+						ng-if = "recommendationTopGrid"
+						nodata = "0 Record"
+						noselect = 'true'
+						view="grid">
+					</grid-directive>
+				</div>
+			</div>
+
+			<div class="recommendationGrid" ng-class="{'col-md-6' : type, 'col-md-12' : !type }" id="recommendationRegionGrid">
+				<div class="box recommendation-top">
+					<h4>Top recommendations: <em class="label-heading">{{region}}</em></h4>
+					<grid-directive 
+						class="recommendationTopGrid"
+						grid="recommendationTopRegionGrid"
+						pagesize="10000000"
+						eventkey = "recommendationTopRegionGrid"
+						ng-if = "recommendationTopRegionGrid"
+						nodata = "0 Record"
+						noselect = 'true'
+						view="grid">
+					</grid-directive>
+				</div>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="col-md-6">
+				<div class="box">
+					<div id="recommended-products"></div>
+				</div>
+			</div>
+
+			<div class="col-md-6 recomm-product-data" ng-if="recommendations">
+				<div class="box">
+					<div id="newBusinessTrends"></div>
+				</div>
+				<div class="box">
+					<div id="renewalTrends"></div>
+				</div>
+			</div>
+
+			<div class="col-md-12 recomm-product-data" ng-if="recommendations" id="topRecommendationCont">
+				<div class="box topRecommendationCont">
+					<h4>Top 10 Recommendations: <em class="label-heading">{{recommendedLabel}}</em></h4>
+					<grid-directive 
+						class="topRecommendationGrid"
+						grid="recommendationGrid"
+						pagesize="10000000"
+						rowselect="onTopRecommendation(row)"
+						eventkey = "recommendationGrid"
+						ng-if = "recommendationGrid"
+						nodata = "0 Record"
+						view="grid">
+					</grid-directive>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>

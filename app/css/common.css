@@ -1,0 +1,475 @@
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar{
+    height: 12px;
+}
+ 
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: rgba(165, 165, 165, 0.41);
+}
+ 
+::-webkit-scrollbar-thumb {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+body, html{
+    min-height: 100%
+}
+
+
+.height100{
+    min-height: 95%;
+}
+
+header{
+    line-height: 33px;
+    font-size: 25px;
+    -webkit-box-shadow: 0px 4px 4px 0px rgba(51,51,51,0.32);
+    -moz-box-shadow: 0px 4px 4px 0px rgba(51,51,51,0.32);
+    box-shadow: 0px 4px 4px 0px rgba(51,51,51,0.32);
+    position: relative;
+    z-index: 5;
+    background-image: linear-gradient(180deg,rgba(0,142,137,.65),rgba(0,142,137,.65)),url('../static/images/home-hero-full1.jpg');
+    color: #fff;
+}
+
+header .top-header{
+    min-height: 41px;
+}
+
+.logo{
+    margin-left: 20px;
+    margin-top: 5px;
+    display: inline-block;
+    color: #fff;
+    width: 53%;
+    text-align: center;
+}
+
+.logo:hover,
+.logo:focus{
+    color: #fff;
+    text-decoration:underline; 
+}
+
+.logo .product-name{
+    font-style: italic;
+    font-size: 18px;
+    margin-left: 10px;
+    float: right;
+}
+
+.logo img{
+    width: 115px;
+    vertical-align: top;
+    margin: 0;
+    padding: 0;
+    height: 31px;
+    float: left;
+}
+
+.form-control:focus{
+    text-shadow: 1px 1px #ccc;
+}
+
+select.form-control{
+    padding-top: 3px;
+}
+
+.form-control{
+    padding:   5px;
+    height: 27px;
+}
+
+.init-app{
+    min-height: 99%;
+    width: 100%;
+}
+
+
+.content{
+    margin: 0 auto;
+    width: 90%;
+    min-height: 95%;
+    border-radius: 0;
+}
+
+.content h1{
+	font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px #000;
+}
+
+
+/* ******************************************************************
+	Popup css starts here
+********************************************************************* */
+
+.popup-container{
+	height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+}
+
+.popup-container .background{
+	position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.5);
+    z-index: 5;
+}
+
+.popup-container .popup{
+    width: 95%;
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    box-shadow: 0 2px 10px rgba(0,0,0,.5);
+    left: 50%;
+    top: -50%;
+    position: relative;
+    z-index: 5;
+    border-radius: 10px;
+}
+
+.close-popup{
+    top: -19px;
+    right: -18px;
+    border-radius: 17px;
+    height: 23px;
+    width: 23px;
+    color: rgba(255,255,255,.5);
+    background: rgba(0,0,0,.5);
+    text-align: center;
+    line-height: 23px;
+    float: right;
+    cursor: pointer;
+}
+
+.popup-header{
+	padding: 10px;
+    background: #0c5d91;
+    color: #fff;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    text-shadow: 1px 1px #000;
+}
+
+.popup-content{
+	overflow: auto;
+    padding: 10px;
+    background: rgba(255,255,255,1);
+    background: radial-gradient(ellipse at center,rgba(255,255,255,1) 0,rgba(158, 158, 158, 0.28) 100%)
+    background-color: #fff;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding-bottom: 55px;
+}
+
+
+.popup-content .nav-tabs{
+    border-bottom: 1px solid #666;
+    margin-bottom: 4px;
+}
+
+.popup-content .nav-tabs>li.active>a, 
+.popup-content .nav-tabs>li.active>a:focus, 
+.popup-content .nav-tabs>li.active>a:hover{
+    background-color: #355468;
+    border: 1px solid #125a88;
+    color: #fff;
+}
+
+.popup-content .nav-tabs>li{
+    margin-bottom: -1px;
+}
+
+.popup-content .nav>li>a{
+    padding: 2px 10px;
+    border-top: none;
+}
+
+.popup-footer{
+    padding: 10px;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    background: #fff;
+    border-top: 1px solid #999;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px
+}
+
+.popup-footer button{
+    margin-left: 10px;
+}
+
+
+.btn-secondry{
+    color: #fff;
+    background-color: #666;
+    border-color: #333;
+}
+
+.btn-secondry:focus, .btn-secondry.active, .btn-secondry:active, .btn-secondry:hover, .open>.dropdown-toggle.btn-secondry{
+    color: #fff;
+    background-color: #333;
+    border-color: #333;
+}
+
+/* ******************************************************************
+	Popup css ends here
+********************************************************************* */
+
+
+/* ******************************************************************
+    Context menu css Starts here
+********************************************************************* */
+
+.context-menu .dropdown-menu{
+    font-size: 13px;
+}
+
+.context-menu .dropdown-menu>li>a{
+    padding: 4px 10px;
+    background-image: none;
+    border-bottom: 1px solid #eee;
+}
+
+/* ******************************************************************
+    Context menu css Ends here
+********************************************************************* */
+
+/* ******************************************************************
+    Login badge css starts here
+********************************************************************* */
+
+header .login-info{
+    font-size: 13px;
+    position: relative;
+    margin-right: 15px;
+    margin-top: 5px;
+}
+
+.login-info .icon-user{
+    color: #0c5d91;
+    border-radius: 10px;
+    background: #fff;
+    height: 20px;
+    width: 20px;
+    text-align: center;
+    line-height: 20px;
+}
+
+.login-info .login-badge{
+    cursor: pointer;
+}
+
+.login-info .login-badge-dropdown{
+    background: #fff;
+    border: 1px solid #ccc;
+    border-color: rgba(0,0,0,.2);
+    color: #000;
+    -webkit-box-shadow: 0 2px 10px rgba(0,0,0,.2);
+    box-shadow: 0 2px 10px rgba(0,0,0,.2);
+    position: absolute;
+    right: 0;
+    top: 38px;
+    border-radius: 2px;
+    padding: 0;
+    line-height: normal;
+    width: 279px;
+    height: 0;
+    overflow: hidden;
+    opacity: 0;
+    z-index: 2;
+    transition: all .2s linear;
+}
+
+.login-info .tip{
+    position: absolute;
+    right: 11px;
+    top: 21px;
+    color: #fff;
+    z-index: 5;
+    font-size: 24px;
+}
+
+.login-info button{
+    padding: 0px 5px;
+}
+
+.login-info .badge-profile-content{
+    border-bottom: 1px solid #ccc;
+    padding: 10px 10px 13px;
+    min-height: 71px;
+}
+
+.login-info .badge-profile-content .icon-user{
+    height: 41px;
+    background: rgba(0,0,0,.5);
+    color: #fff;
+    font-size: 27px;
+    line-height: 43px;
+    text-align: center;
+    width: 41px;
+    vertical-align: top;
+    margin-right: 15px;
+    float: left;
+}
+
+.login-info .badge-profile-content button{
+    margin-top: 10px;
+    margin-left: 0
+}
+
+.login-info .btn-logout{
+    float: right;
+    margin-top: 3px;
+    margin-right: 10px;
+}
+
+.login-info .logout-badge{
+    background: #f5f5f5;
+    border-color: rgba(0,0,0,.2);
+    padding: 10px 0;
+    width: 100%;
+    display: table;
+}
+
+/* ******************************************************************
+    Login badge css ends here
+********************************************************************* */
+
+.directiveDate .input-group,
+.directiveDate .input-group .input-group-addon{
+    display: inline-block
+}
+
+.directiveDate .input-group .input-group-addon{
+    display: inline-block;
+    padding: 6px 20px 8px 5px;
+}
+
+.loader{
+    position: fixed;
+    top: 0;
+    display: none;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.6);
+    z-index: 10000
+}
+
+.loader img{
+    transform: translate(-50%, -50%);
+    width: 85px;
+    height: 85px;
+    left: 50%;
+    position: absolute;
+    top: 30%;
+}
+
+.datepicker-days .table-condensed{
+    font-size: 12px;
+}
+
+.popup-content .labGrid .search-container{
+    margin-left: 0 !important
+}
+
+.popup-content .labGrid .action-header{
+    padding-right: 0 !important
+}
+
+
+.box{
+    padding: 1px 10px;
+    margin-top: 30px;
+}
+
+/* **********************************************
+    Raw table css starts here
+*********************************************** */
+.table-raw{
+    width: 100%;
+}
+
+.table-raw ul{
+    list-style-type: none;
+    display: table;
+    margin:0;
+    padding: 0;
+    width: 100%;
+}
+
+.table-raw ul li{
+    display: table-row;
+    width: 100%;
+}
+
+.table-raw ul li.header{
+    background: #000;
+    padding: 5px 0; 
+}
+
+.table-raw ul li.header span.cell{
+    font-size: 13px;
+}
+
+.table-raw ul li span.cell{
+    display: table-cell;
+    padding:5px;
+    font-size: 12px;
+    border-bottom: 1px solid #3e3e3e;
+}
+
+/* **********************************************
+    Raw table css ends here
+*********************************************** */
+
+.highcharts-container svg > text:last-child{
+    visibility: hidden;
+}
+
+.hint{
+    color: rgba(222, 207, 8, 0.52);
+}
+
+.tooltip-cont{
+    position: absolute;
+    opacity: 1;
+    width: 200px;
+    background: #000;
+    border-radius: 10px;
+    padding: 10px 15px 0;
+    border: 1px solid rgba(8,189,40,.8);
+    text-align: center;
+    font-size: 12px;
+    z-index: 555;
+    color: #e4e4e4;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 18px;
+}
+
+.tooltip-cont p{
+    margin-bottom: 0;
+}
+
+.tooltip-cont .tip{
+    color: rgba(8,189,40,.8);
+    position: relative;
+    top: 9px;
+    left: 0;
+}
+
+.main-menu .ham-menu{
+    cursor: pointer;
+}

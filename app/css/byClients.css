@@ -1,0 +1,45 @@
+.search{
+    padding: 15px;
+}
+
+.search.box{
+	margin-top: 20px;
+}
+
+.recommendedByClient .grid-vertical-scroll{
+	max-height: 625px
+}
+
+.recomm-clients .btn-search{
+	margin-top: 23px;
+    padding: 3px 23px;
+    margin-bottom: 10px;
+    margin-right: 20px;
+}
+
+.recommendedByClient .mobile .selectpage-dropdown{
+    display: none;
+}
+
+.recomm-clients .meta-form{
+	margin-left: -10px;
+    margin-bottom: 0;
+}
+
+.recomm-clients .meta-form.form-inline ul.search-controls > li{
+	margin-bottom: 10px;
+}
+
+.recomm-clients .form-inline .form-group{
+	display: block;
+	margin-bottom: 0
+}
+
+.recomm-clients .form-inline .form-control{
+	width: 100%
+}
+
+.recommendedByClient .labGrid .no-data{
+	margin-left: 0;
+	text-align: center;
+}

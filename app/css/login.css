@@ -1,0 +1,58 @@
+.loginContainer{
+    height: 100%;
+    width: 100%;   
+}
+
+.login-box{
+    max-width: 568px;
+    height: 394px;
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    left: 50%;
+    top: 50%;
+    position: relative;
+    background-image: linear-gradient(180deg,rgba(50, 143, 138, 0.33),rgba(8, 172, 75, 0.38)),url(../static/images/loginBG.jpg);
+    position: relative;
+    border-radius: 10px;
+    background-position: bottom right;
+    background-size: cover;
+}
+
+.login-box .logo{
+    position: relative;
+    top: 15px;
+}
+
+.login-box form{
+    width: 405px;
+    color: #fff;
+    margin-top: 20px;
+    margin-left: 150px;
+    display: block;
+}
+
+.login-box ul{
+    list-style-type: none;
+}
+
+.login-box .btn-login{
+    float: right;
+}
+
+.login-box .help-statements{
+    position: fixed;
+    margin-top: 150px;
+    left: 15px;
+    font-size: 11px;
+}
+
+.login-box .alert-danger{
+    position: absolute;
+    width: 368px;
+    right: 14px;
+}
+
+.username i{
+    text-transform: capitalize;
+    font-style: normal;
+}

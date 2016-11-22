@@ -1,0 +1,92 @@
+.summary .labGrid .header-container{
+    padding-right: 0
+}
+
+.recommendationTopGrid .labGrid .grid-container{
+    max-height: 181px;
+    min-height: 100px;
+}
+
+.recommendationTopGrid .labGrid .header-container ul.grid{
+    padding-right: 12px;
+}
+
+.recommendationTopGrid .labGrid .search-container{
+    float: right;
+}
+
+.recommendation-top h4{
+    margin-bottom: -25px;
+}
+
+#recommendation-types,
+#recommendation-region{
+    height: 360px;
+}
+
+.recommendationGrid{
+    height: 0;
+    opacity: 0;
+}
+
+.recommendationGrid .labGrid li.row span.cell{
+	float: none;
+	white-space: normal;
+}
+
+.width0{
+	width:0 !important;
+}
+
+#recommended-products{
+	height: 381px;
+}
+
+#newBusinessTrends,
+#renewalTrends{
+	height: 175px;
+}
+
+.topRecommendationCont .labGrid .search-container{
+	float: right;
+}
+
+.topRecommendationCont h4{
+	margin-bottom: -25px;
+}
+
+.col-md-6 .recommendation-top h4{
+    width: 326px;
+}
+
+.label-heading{
+    color:#decf07;
+}
+
+.label-chart{
+    font-size: 14px;
+}
+
+.dark .col-md-6.recommendationGrid .labGrid li.header span.cell{
+    float: left;
+    white-space: nowrap;
+    min-height: 27px;
+}
+
+.box.recommendation-top,
+.recomm-product-data .box{
+    transition: background 200ms
+}
+
+.recommendationGrid a{
+    color: #e4e4e4;
+    text-decoration: underline;
+}
+
+.recommendationGrid a:hover{
+    color: #3cdc0a
+}
+
+.topRecommendationGrid .labGrid li.header span.cell:last-child{
+    height: 27px;
+}

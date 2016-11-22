@@ -1,0 +1,345 @@
+.client-details .page-header-cont{
+    position: relative;
+}
+
+h1.clientName.edit{
+    background: #000;
+    padding: 2px 5px 7px;
+    position: relative;
+    left: -14px;
+    top: -5px;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    margin-bottom: 1px;
+    display: inline-block;
+}
+
+h1.clientName .form-group,
+h1.clientName .save-cancel span.save-client,
+h1.clientName.edit .cancel-client{
+    display: inline-block;
+}
+
+h1.clientName .form-group{
+    margin-bottom: 0
+}
+
+h1.clientName input,
+h1.clientName label,
+h1.clientName .cancel-client,
+h1.clientName .typeahead .input-container .glyphicon,
+h1.clientName.edit .name-read{
+    display: none
+}
+
+span.cancel-client{
+    color: #b1b1b1
+}
+
+em.save-cancel{
+    position: relative;
+    top: 6px;
+    font-size: 25px;
+}
+
+h1.clientName .suggestion{
+    top: 28px;
+}
+
+h1.clientName .suggestion ul{
+    padding-left: 0;
+    text-shadow: none;
+}
+
+h1.clientName .name-read{
+    display: inline-block;
+}
+
+h1.clientName.edit input{
+    padding: 5px;
+    font-size: 15px;
+    color: #333;
+    display: block;
+    width: 335px;
+}
+
+h1.clientName .edit-button,
+h1.clientName.edit:hover .edit-button{
+    display: none;
+}
+
+h1.clientName:hover .edit-button{
+    display: inline-block;
+}
+
+h1.clientName .edit-button{
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.client-details .page-header-cont .other-details{
+    font-size: 12px;
+    float: right;
+    position: absolute;
+    right: -14px;
+    background: #0e0e0e;
+    padding: 10px;
+    top: 15px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.client-details .page-header-cont .other-details em{
+    font-style: normal;
+}
+
+.client-details .page-header-cont .other-details strong{
+    margin-left: 20px;
+    color: #decf07;
+}
+
+.client-existing-details .box{
+    margin-top: 20px;
+    height: 255px;
+    position: relative;
+}
+
+.product-similar-client{
+    position: relative;
+}
+
+.client-existing-details .box .glyphicon-remove,
+.product-similar-client .glyphicon-remove{
+    position: static;
+}
+
+.product-similar-client .body-scroll span.cell:last-child{
+    text-align: center;
+}
+
+.client-existing-details .box ul{
+    max-height: 180px;
+    overflow: auto;
+}
+
+.client-existing-details .box h5{
+    border-bottom: 1px solid rgb(84, 84, 84);
+    padding-bottom: 5px;
+    font-size: 15px;
+    color: #ccc
+}
+
+.existing-product ul{
+    list-style-type: none;
+    padding: 0
+}
+
+.existing-product ul li{
+    margin: 0 0 5px;
+    padding: 0;
+    border-bottom: 1px solid #3e3e3e;
+    padding-bottom: 5px;
+    font-size: 12px;
+}
+
+.purchase-history table{
+    font-size: 12px;
+}
+
+#purchaseHistory{
+    height: 200px;
+}
+
+.recomm-tabs .table-raw ul li span.cell{
+    width: 12%
+}
+
+.recomm-tabs .table-raw ul li span.cell:nth-child(1){
+    width: 300px
+}
+
+.similar-client.recomm-tabs .table-raw ul li span.cell:nth-child(1){
+    width: 200px
+}
+
+.recomm-tabs .table-raw ul li span.cell:nth-child(2){
+    width: 20%
+}
+
+.similar-client.recomm-tabs .table-raw ul li span.cell:nth-child(2){
+    width: 25%
+}
+
+.recomm-tabs .table-raw .body-scroll{
+    height: 353px;
+    overflow: auto;
+}
+
+.recomm-tabs.recomm-products .table-raw .body-scroll{
+    max-height: 385px;
+}
+
+.recomm-tabs .glyphicon-remove{
+    color: #ff0000;
+}
+
+.recomm-tabs .glyphicon-ok{
+    color: #decf07;
+}
+
+.recomm-tab .nav-tabs{
+    margin-top: 30px;
+}
+
+.dark .recomm-tab .nav-tabs>li.active>a, 
+.dark .recomm-tab .nav-tabs>li.active>a:focus, 
+.dark .recomm-tab .nav-tabs>li.active>a:hover, 
+.dark .recomm-tab .nav>li>a:focus, 
+.dark .recomm-tab .nav>li>a:hover{
+    box-shadow: 0px 2px 5px 1px rgba(0,0,0,.7);
+}
+
+.dark .recomm-tabs .box{
+    box-shadow: 0px 3px 5px 1px rgba(0,0,0,.7);
+    padding: 10px;
+    margin-top: 0
+}
+
+.col-md-12.recomm-tabs .table-raw > ul{
+    padding-right: 12px;
+}
+
+.col-md-12.recomm-tabs .col-md-6 .table-raw > ul{
+    padding-right: 0;
+}
+
+.similar-client .table-raw li{
+    cursor: default;
+}
+
+.similar-client .table-raw li.selected{
+    background: rgba(8,189,40,.8);
+    color: #fff;
+    transition: background 1s;
+}
+
+.col-transition{
+    transition: all 1s;
+}
+
+.client-details .status-existing{
+    float: right;
+    margin-right: 10px;
+}
+
+.client-details .status-existing .glyphicon-ok{
+    color: #decf07;
+}
+
+.client-details .status-existing .glyphicon-remove{
+    color: #ff0000;
+}
+
+.recomm-tabs.similar-client{
+    height: 443px;
+}
+
+.right-align{
+    text-align: right;
+    padding-right: 40px !important;
+}
+
+.productRecommendationDetails .grid-vertical-scroll{
+    max-height: 342px;
+}
+
+.similarClientsProducts .grid-vertical-scroll{
+    max-height: 353px;
+}
+
+.recomm-products .productRecommendationDetails .search-container{
+    display: none !important;
+}
+
+.col-transition.select-client{
+    height: 395px;
+    margin-top: -10px
+}
+
+.similarClientsProducts .action-header{
+    text-align: right;
+    margin-top: -27px;
+}
+
+.arrangeBySales{
+    margin-right: 5px;
+    float: right;
+}
+
+.arrangeBySales input{
+    position: relative;
+    margin-right: 5px;
+    top: 2px;
+}
+
+.similarClientDropdown{
+    display: inline-block;
+    width: 300px;
+    margin-left: 10px;
+}
+
+.similarClientsAttributes .labGrid .search-container{
+    float: right;
+}
+
+.similarClientsAttributes .labGrid .action-header{
+    margin-top: -42px;
+    margin-bottom: 10px;
+}
+
+.similarClientsAttributes .grid-vertical-scroll{
+    max-height: 320px
+}
+
+.similarClientsAttributes .labGrid .no-data{
+    margin-left: 0;
+    text-align: center;
+}
+
+.productDescriptions{
+    padding: 5px 10px;
+    background: #000;
+    margin-bottom: 15px;
+}
+
+.productDescriptions h5{
+    color: #decf07
+}
+
+.productDescriptions ul{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    max-height: 230px;
+    overflow-y: auto;
+}
+
+.productDescriptions ul li{
+    width: 30%;
+    /* display: inline-block; */
+    margin-bottom: 10px;
+    font-size: 12px;
+    float: left;
+    margin-right: 3%;
+}
+
+.productDescriptions ul li span.circle{
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    background: #866b2c;
+    position: relative;
+    top: -3px;
+    margin-right: 3px;
+    border-radius: 10px;
+}

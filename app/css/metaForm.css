@@ -1,0 +1,62 @@
+.meta-form ul{
+    padding: 0
+}
+
+.meta-form ul,
+.meta-form li{
+    list-style-type: none;
+}
+
+.meta-form.form-inline li{
+    display: inline-block;
+    padding: 0 10px;
+    vertical-align: top;
+    margin-bottom: 30px;
+}
+
+.meta-form.form-inline li label{
+    display: block;
+}
+
+.meta-form.form-inline li label.radio-inline,
+.meta-form.form-inline li label.checkbox-inline{
+    display: inline-block;
+}
+
+.meta-form.form-inline li.seperator,
+.meta-form.form-inline li.heading{
+	display: block;
+    width: 100%;
+}
+
+.meta-form.form-inline li.seperator hr{
+	border: 1px solid #333;
+    margin: 10px 0 0;
+}
+
+.meta-form.form-inline li.heading h4{
+	font-size: 15px;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.meta-form.form-inline .date-container .form-control{
+    width: 126px;
+}
+
+.meta-form.form-inline .date-container .directiveDate .input-group,
+.meta-form.form-inline .date-container .directiveDate{
+    display: inline-block;
+}
+
+.meta-form.form-inline .date-container .directiveDate .input-group .input-group-addon{
+    display: inline-block;
+    padding: 4px 10px 7px 10px;
+}
+
+.meta-form .required{
+    color: #ff0000;
+    font-size: 11px;
+}

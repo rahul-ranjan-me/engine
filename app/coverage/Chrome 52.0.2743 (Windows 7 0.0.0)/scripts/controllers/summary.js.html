@@ -1,0 +1,1076 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for scripts\controllers\summary.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">all files</a> / <a href="index.html">scripts/controllers/</a> summary.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">89.47% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>119/133</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">70.83% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>17/24</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">66.67% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>14/21</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">89.47% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>119/133</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">11×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11×</span>
+<span class="cline-any cline-yes">11×</span>
+<span class="cline-any cline-yes">11×</span>
+<span class="cline-any cline-yes">22×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11×</span>
+<span class="cline-any cline-yes">11×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11×</span>
+<span class="cline-any cline-yes">11×</span>
+<span class="cline-any cline-yes">11×</span>
+<span class="cline-any cline-yes">22×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11×</span>
+<span class="cline-any cline-yes">11×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-yes">20×</span>
+<span class="cline-any cline-yes">20×</span>
+<span class="cline-any cline-yes">20×</span>
+<span class="cline-any cline-yes">20×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-yes">20×</span>
+<span class="cline-any cline-yes">20×</span>
+<span class="cline-any cline-yes">20×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">20×</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-yes">18×</span>
+<span class="cline-any cline-yes">18×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-yes">18×</span>
+<span class="cline-any cline-yes">18×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">define([], 
+	function() {
+		
+	    function SummaryCtrl($scope, httpCalls, $timeout, $window, chartFactory, $sce){
+&nbsp;
+	    	this.$scope = $scope;
+	    	this.httpCalls = httpCalls;
+	    	this.$timeout = $timeout;
+	    	this.$sce = $sce;
+	    	this.chartFactory = chartFactory;
+	    	this.createRecommendationTable = this.createRecommendationTable.bind(this);
+	    	this.createProductGridChart = this.createProductGridChart.bind(this);
+&nbsp;
+&nbsp;
+	    	this.recommendationType = {
+	    		container : 'recommendation-types',
+	    		title : 'Recommendations by type',
+	    		subtitle : 'Click to see data',
+	    		seriesName : 'No. of clients',
+	    		data : []
+	    	};
+&nbsp;
+	    	this.recommendationRegion = {
+	    		container : 'recommendation-region',
+	    		title : 'Recommendations by region',
+	    		subtitle : 'Click to see data',
+	    		seriesName : 'No. of clients',
+	    		data : []
+	    	};
+&nbsp;
+	    	this.recommendationProduct = {
+	    		container : 'recommended-products',
+	    		title : 'Top 5 Recommended Products',
+	    		subtitle : 'Click to see data',
+	    		seriesName : 'No. of clients',
+	    		data : []
+	    	};
+&nbsp;
+	    	this.newBusinessTrends = {
+	    		container : 'newBusinessTrends',
+	    		title : 'New business trends',
+	    		seriesName : 'No. of clients',
+	    		categories :[],
+	    		data : []
+	    	};
+&nbsp;
+	    	this.renewalTrends = {
+	    		container : 'renewalTrends',
+	    		title : 'New renewal trends',
+	    		seriesName : 'No. of clients',
+	    		categories :[],
+	    		data : []
+	    	};
+	    	<span class="missing-if-branch" title="if path not taken" >I</span>if($window.innerWidth &lt; 800){
+<span class="cstat-no" title="statement not covered" >	    		this.$scope.mobile = true;</span>
+			}else{
+				this.$scope.mobile = false;
+			}
+&nbsp;
+	    	this.replace = false;
+&nbsp;
+	    	this.scopeBindedMethods();
+	    	this.getRecommendationType();
+	    	this.getRecommendedProduct();
+	    }
+&nbsp;
+	    SummaryCtrl.prototype.getRecommendationType = function(){
+	    	var likeDislike = <span class="fstat-no" title="function not covered" >function(elem, i, row){</span>
+<span class="cstat-no" title="statement not covered" >	    		return this.$sce.trustAsHtml('&lt;like-dislike clientname="'+row.clientName+'" productname="'+row.productFamilyName+'"&gt;&lt;/like-dislike&gt;');</span>
+	        }.bind(this);
+&nbsp;
+	        var createConnectLink = <span class="fstat-no" title="function not covered" >function(elem, i, row){</span>
+<span class="cstat-no" title="statement not covered" >	        	return this.$sce.trustAsHtml('&lt;a href="http://lon6slsdvwww001:8080/MarkitConnect/#/connection/'+elem+' '+row.clientName+'" target="_blank"&gt;'+elem+'&lt;/a&gt;');</span>
+	        }.bind(this);
+&nbsp;
+	        var recommendationTopGridHeader = {
+	        	clientName: {
+	                label:'Client Name',
+	                id: 'clientName',
+	                width:'30%'
+	            },
+	            productFamilyName: {
+	                label:'Product',
+	                id: 'productFamilyName',
+	                width:'20%'
+	            },
+	            priority: {
+	                label:'Priority',
+	                id: 'priority',
+	                width:'15%'
+	            },
+	            contactName: {
+	                label:'Contact Name',
+	                id: 'contactName',
+	                formatWithHTML: createConnectLink,
+	                width:'20%'
+	            },
+	            likeDislike: {
+	                label: '',
+	                id: 'likeDislike',
+	                width : '15%',
+	                formatWithHTML : likeDislike
+	            }
+	        };
+&nbsp;
+	    	this.$scope.recommendationTopGrid = {
+	    		headerData : recommendationTopGridHeader,
+	    		grid : []
+	    	};
+&nbsp;
+	    	this.$scope.recommendationTopRegionGrid = {
+	    		headerData : recommendationTopGridHeader,
+	    		grid : []
+	    	};
+	    	
+			this.httpCalls.getRecommendationType(null, null, function(data){
+				var dataToSend = [];
+				for(var i in data){
+					dataToSend.push([i, data[i]]);
+				}
+				this.recommendationType.data = dataToSend;
+				this.chartFactory.pie(this.recommendationType, this.createRecommendationTable);
+			}.bind(this));	
+&nbsp;
+&nbsp;
+			this.httpCalls.getRecommendationRegion(null, null, function(data){
+				var dataToSend = [];
+				for(var i in data){
+					dataToSend.push([i, data[i]]);
+				}
+				this.recommendationRegion.data = dataToSend;
+				this.chartFactory.pie(this.recommendationRegion, this.createRecommendationTable);
+			}.bind(this));	
+&nbsp;
+		 };
+&nbsp;
+	    SummaryCtrl.prototype.createRecommendationTable = function(label, chart){
+			
+			var heightToShow,
+				param = {},
+				type = chart.renderTo.id ==='recommendation-types' ? 'type' : 'region',
+				showDivs = <span class="fstat-no" title="function not covered" >function (){</span>
+<span class="cstat-no" title="statement not covered" >					if(this.$scope.region || this.$scope.type){</span>
+<span class="cstat-no" title="statement not covered" >						$('.grid-wrapper').height(286);</span>
+					}else{
+<span class="cstat-no" title="statement not covered" >						$('.grid-wrapper').height(0);	</span>
+					}
+				}.bind(this);
+&nbsp;
+			param[type] = label;
+&nbsp;
+			<span class="missing-if-branch" title="if path not taken" >I</span>if(this.$scope.mobile){
+<span class="cstat-no" title="statement not covered" >				heightToShow = 'auto';</span>
+			}else{
+				heightToShow = '286px';
+			}
+&nbsp;
+			
+			if(label === this.$scope[type]){
+&nbsp;
+				
+				delete this.$scope[type];
+				
+				if(type === 'type'){
+					this.$scope.recommendationTopGrid.grid = [];
+					this.$scope.$broadcast('recommendationTopGrid', this.$scope.recommendationTopGrid);
+					$('#recommendationGrid').css({height:0, opacity:0});
+				}else <span class="missing-if-branch" title="else path not taken" >E</span>if(type === 'region'){
+					this.$scope.recommendationTopRegionGrid.grid = [];
+					this.$scope.$broadcast('recommendationTopRegionGrid', this.$scope.recommendationTopRegionGrid);
+					$('#recommendationRegionGrid').css({height:0, opacity:0});
+				}
+				//showDivs();
+&nbsp;
+			}else{
+				this.httpCalls.getRecommendationTop(param, null, function(data){
+					
+					this.$scope[type] = label;
+&nbsp;
+					if(type === 'type'){
+						this.$scope.recommendationTopGrid.grid = data;
+						this.$scope.$broadcast('recommendationTopGrid', this.$scope.recommendationTopGrid);
+						$('#recommendationGrid').css({height:heightToShow, opacity:1});
+						$('#recommendationGrid .box').css({'background':'#4a4949'});
+						var colorChange1 = window.setTimeout(<span class="fstat-no" title="function not covered" >function(){</span>
+<span class="cstat-no" title="statement not covered" >							$('#recommendationGrid .box').css({'background':'#2f2f2f'});</span>
+<span class="cstat-no" title="statement not covered" >							clearTimeout(colorChange1);</span>
+						},200);
+					}else{
+						this.$scope.recommendationTopRegionGrid.grid = data;
+						this.$scope.$broadcast('recommendationTopRegionGrid', this.$scope.recommendationTopRegionGrid);
+						$('#recommendationRegionGrid').css({height:heightToShow, opacity:1});
+						$('#recommendationRegionGrid .box').css({'background':'#4a4949'});
+						var colorChange2 = window.setTimeout(<span class="fstat-no" title="function not covered" >function(){</span>
+<span class="cstat-no" title="statement not covered" >							$('#recommendationRegionGrid .box').css({'background':'#2f2f2f'});</span>
+<span class="cstat-no" title="statement not covered" >							clearTimeout(colorChange2);</span>
+						},200);
+					}
+&nbsp;
+					//showDivs();
+				}.bind(this));
+			}
+&nbsp;
+	    };
+&nbsp;
+	    SummaryCtrl.prototype.getRecommendedProduct = function(){
+	    	var likeDislike = <span class="fstat-no" title="function not covered" >function(elem, i, row){</span>
+<span class="cstat-no" title="statement not covered" >	    		return this.$sce.trustAsHtml('&lt;like-dislike clientname="'+row.clientName+'" productname="'+this.$scope.recommendedLabel+'"&gt;&lt;/like-dislike&gt;');</span>
+	        }.bind(this);
+&nbsp;
+	    	this.$scope.recommendationGrid = {
+	    		headerData : { 
+		            clientName: {
+		                label:'Client Name',
+		                id: 'clientName',
+		                width:'30%'
+		            },
+		            region: {
+		                label:'Region',
+		                id: 'region',
+		                width:'30%'
+		            },
+		            type: {
+		                label:'Type',
+		                id: 'type',
+		                width:'30%'
+		            },
+		            likeDislike: {
+		                label: '.',
+		                id: 'likeDislike',
+		                width : '10%',
+		                formatWithHTML : likeDislike
+		            }
+		        },
+	    		grid : []
+	    	};
+&nbsp;
+	    	this.httpCalls.getRecommendationProducts(null, null, function(data){
+				this.recommendationProduct.series = [{
+					name: 'Product',
+					data : []
+				}];
+&nbsp;
+				this.recommendationProduct.categories = [];
+&nbsp;
+				var tempArr = [],
+					sortedArr;
+				for(var i in data){
+					var tempObj = {};
+					tempObj[i] = data[i];
+					tempObj.val = data[i];
+					tempArr.push(tempObj);
+				}
+&nbsp;
+				sortedArr =  _.orderBy(tempArr, ['val'], ['desc']);
+&nbsp;
+				for(var k =0; k&lt;sortedArr.length; k++){
+					delete sortedArr[k].val;
+					for(var z in sortedArr[k]){
+						this.recommendationProduct.categories.push(z);
+&nbsp;
+						if(k === 0){
+							this.recommendationProduct.series[0].data.push({y: sortedArr[k][z], color: '#decf07'});
+						}else{
+							this.recommendationProduct.series[0].data.push({y: sortedArr[k][z]});
+						}
+						
+					}
+				}
+&nbsp;
+				this.$scope.recommendedLabel = this.recommendationProduct.categories[0];
+&nbsp;
+				this.chartFactory.barChart(this.recommendationProduct, this.createProductGridChart, true);
+&nbsp;
+				this.createProductGridChart(this.recommendationProduct.categories[0]);
+&nbsp;
+			}.bind(this));
+	    };
+&nbsp;
+	    SummaryCtrl.prototype.createProductGridChart = function(label, chart){
+	    	this.$scope.recommendedLabel = label;
+	    	this.newBusinessTrends.title = "&lt;span class='label-chart'&gt;New business trends: &lt;em class='label-heading'&gt;"+label+"&lt;/em&gt;&lt;/span&gt;";
+	    	this.renewalTrends.title = "&lt;span class='label-chart'&gt;New renewal trends: &lt;em class='label-heading'&gt;"+label+"&lt;/em&gt;&lt;/span&gt;";
+&nbsp;
+	    	this.httpCalls.getRecommendationProductDetails({product:label}, null, function(data){
+&nbsp;
+	    		this.$scope.recommendations = data.recommendations;
+&nbsp;
+	    		this.$scope.recommendationGrid.grid = data.recommendations;
+	    		this.$scope.$broadcast('recommendationGrid', this.$scope.recommendationGrid);
+				
+	    		this.newBusinessTrends.categories = [];
+	    		this.newBusinessTrends.data = [];
+	    		this.renewalTrends.categories = [];
+	    		this.renewalTrends.data = [];
+&nbsp;
+	    		for(var i in data.newBusinessTrend){
+	    			this.newBusinessTrends.categories.push(i);
+	    			this.newBusinessTrends.data.push(data.newBusinessTrend[i]);
+	    		}
+&nbsp;
+	    		for(var z in data.renewalTrend){
+	    			this.renewalTrends.categories.push(z);
+	    			this.renewalTrends.data.push(data.renewalTrend[z]);
+	    		}
+&nbsp;
+	    		this.$timeout(function(){
+					this.chartFactory.lineRenwal(this.renewalTrends, this.replace);
+		    		this.chartFactory.lineBusiness(this.newBusinessTrends, this.replace);
+		    		
+&nbsp;
+		    		if(!this.$scope.mobile &amp;&amp; this.replace){
+						window.scrollTo( 0, 1000 );
+					}
+&nbsp;
+					this.replace = true;
+&nbsp;
+				}.bind(this));
+&nbsp;
+	    		$('.recomm-product-data .box').css({'background':'#4a4949'});
+				var colorChange2 = window.setTimeout(<span class="fstat-no" title="function not covered" >function(){</span>
+<span class="cstat-no" title="statement not covered" >					$('.recomm-product-data .box').css({'background':'#2f2f2f'});</span>
+<span class="cstat-no" title="statement not covered" >					clearTimeout(colorChange2);</span>
+				},200);
+&nbsp;
+&nbsp;
+	    	}.bind(this));
+	    };
+&nbsp;
+	    SummaryCtrl.prototype.scopeBindedMethods = function(){
+	    	this.$scope.onTopRecommendation = function(row){
+	    		window.location.hash = "/ClientDetails/"+row[0].clientId;
+	    	};
+	    };
+&nbsp;
+	    return SummaryCtrl;
+	}
+);</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Sep 09 2016 16:33:29 GMT+0530 (India Standard Time)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

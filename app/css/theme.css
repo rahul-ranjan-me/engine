@@ -1,0 +1,466 @@
+.dark .content{
+   -webkit-box-shadow: 0px 0px 10px 4px rgba(51,51,51,0.32);
+    -moz-box-shadow: 0px 0px 10px 4px rgba(51,51,51,0.32);
+    box-shadow: 0px 0px 10px 4px rgba(51,51,51,0.32);
+
+    background: rgba(56,69,54,1);
+    background: -moz-linear-gradient(top, rgba(56,69,54,1) 0%, rgba(14,25,31,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(56,69,54,1)), color-stop(100%, rgba(14,25,31,1)));
+    background: -webkit-linear-gradient(top, rgba(56,69,54,1) 0%, rgba(14,25,31,1) 100%);
+    background: -o-linear-gradient(top, rgba(56,69,54,1) 0%, rgba(14,25,31,1) 100%);
+    background: -ms-linear-gradient(top, rgba(56,69,54,1) 0%, rgba(14,25,31,1) 100%);
+    background: linear-gradient(to bottom, rgba(56,69,54,1) 0%, rgba(14,25,31,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#384536', endColorstr='#0e191f', GradientType=0 );
+}
+
+/* **********************************************
+    Main Nav starts here
+************************************************ */
+.dark .main-menu-item{
+    background: #f3f3f3;
+    color: #7b7b7b;
+}
+
+
+.dark .main-menu-item li:hover{
+    background-color: #d6d6d6;
+}
+
+/* **********************************************
+    Main Nav ends here
+************************************************ */
+
+/* **********************************************
+    Grid css starts here
+*********************************************** */
+.dark .labGrid .header-container{
+    background: transparent;
+}
+
+.dark .labGrid li.header{
+    background: #000;
+}
+
+.dark .labGrid li.header span.cell,
+.dark .labGrid li.row span.cell{
+    border-right-color: #676767;
+    border-bottom: 1px solid #676767;
+    border-right: 1px solid #676767;
+}
+
+.dark .labGrid li.row.body.selected, 
+.dark .labGrid li.row.body.selected .nested-details, 
+.dark .labGrid li.row.body.selected:nth-child(2n){
+    background: rgba(8, 189, 40, .8);
+    color: #fff;
+}
+
+.dark .labGrid .no-data{
+    margin-left: 0;
+    text-align: center
+}
+/* **********************************************
+    Grid css ends here
+*********************************************** */
+
+
+/* **********************************************
+    Lead dashboard starts here
+************************************************ */
+.dark .leads-dashboard .badge-item:nth-child(1){
+    background: rgba(107,107,107,1);
+    background: linear-gradient(to right,rgb(218, 196, 34) 0,rgb(179, 179, 179) 100%);
+}
+
+.dark .leads-dashboard .badge-item:nth-child(2){
+    background: rgba(107,107,107,1);
+    background: linear-gradient(to right,#da7722 0,#b3b3b3 100%);
+}
+
+.dark .leads-dashboard .badge-item:nth-child(3){
+    background: rgba(107,107,107,1);
+    background: linear-gradient(to right,#00ad7d 0,#b3b3b3 100%);
+}
+
+.dark .leads-dashboard .badge-item:nth-child(4){
+    background: rgba(107,107,107,1);
+    background: linear-gradient(to right,#bf5d9d 0,#b3b3b3 100%);
+}
+
+.dark .box{
+    background-color: #2f2f2f;
+    box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, .7);
+}
+
+
+/* **********************************************
+    Lead dashboard ends here
+************************************************ */
+
+
+.dark .nav-tabs>li.active>a, 
+.dark .nav-tabs>li.active>a:focus, 
+.dark .nav-tabs>li.active>a:hover,
+.dark .nav>li>a:focus, 
+.dark .nav>li>a:hover{
+    background: #2f2f2f;
+    color: #e4e4e4;
+    border: 1px solid #404040;
+}
+
+.dark .nav-tabs>li>a{
+    color: #e4e4e4;
+}
+
+.dark .nav-tabs{
+    border-bottom: 1px solid #404040;
+}
+
+@media (max-width: 800px) {
+    body.dark{
+        background-color: rgba(50,143,138,1);
+        filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#467263, endColorstr=#809E81);
+        background-image: -moz-linear-gradient(top,rgba(70, 114, 99, 1) 0, rgba(128, 158, 129, 1) 25%,#382D31 100%);
+        background-image: linear-gradient(top,rgba(70, 114, 99, 1) 0, rgba(128, 158, 129, 1) 25%,#382D31 100%);
+        background-image: -webkit-linear-gradient(top,rgba(70, 114, 99, 1) 0, rgba(128, 158, 129, 1) 25%,#382D31 100%);
+        background-image: -o-linear-gradient(top,rgba(70, 114, 99, 1) 0, rgba(128, 158, 129, 1) 25%,#382D31 100%);
+        background-image: -ms-linear-gradient(top,rgba(70, 114, 99, 1) 0, rgba(128, 158, 129, 1) 25%,#382D31 100%);
+        background-image: -webkit-gradient(linear,right top,right bottom,color-stop(0,rgba(70, 114, 99, 1)),color-stop(25%,rgba(128, 158, 129, 1)),color-stop(100%,#382D31));
+        color: #e4e4e4;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+    }
+
+    header{
+        padding-top: 10px;
+    }
+
+    .logo{
+        width: auto;
+    }
+
+    .loginADContainer .login-connect{
+        width: 90%;
+    }
+
+    .loginADContainer .login-connect img{
+        width: 80%;
+    }
+
+    .mobile-only{
+        display: block !important;
+    }
+
+    .desktop-only{
+        display: none !important
+    }
+
+    .recomm-clients .meta-form.form-inline ul.search-controls>li{
+        display: block;
+    }
+
+    .recomm-clients .btn-search{
+        margin-top: 10px;
+        margin-right: 10px;
+    }
+
+    .open-leads-recommendation h4{
+        margin-bottom: 10px
+    }
+
+    .labGrid .list-view li.list{
+        background: rgba(255,255,255,1);
+        background: -moz-radial-gradient(center, ellipse cover, rgba(255,255,255,1) 0%, rgba(202,202,202,1) 100%);
+        background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(255,255,255,1)), color-stop(100%, rgba(202,202,202,1)));
+        background: -webkit-radial-gradient(center, ellipse cover, rgba(255,255,255,1) 0%, rgba(202,202,202,1) 100%);
+        background: -o-radial-gradient(center, ellipse cover, rgba(255,255,255,1) 0%, rgba(202,202,202,1) 100%);
+        background: -ms-radial-gradient(center, ellipse cover, rgba(255,255,255,1) 0%, rgba(202,202,202,1) 100%);
+        background: radial-gradient(ellipse at center, rgba(255,255,255,1) 0%, rgba(202,202,202,1) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#cacaca', GradientType=1 );
+        color: #333;
+        margin-left: 0;
+    }
+
+    .client-details .page-header-cont .other-details{
+        position: relative;
+        top: 0;
+        right: 0;
+        width: 100%;
+        border-radius: 0;
+    }
+
+    .client-details .page-header-cont .other-details strong{
+        margin-left: 0
+    }
+
+    .client-details .page-header-cont .other-details em{
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    .client-existing-details .box{
+        height: auto;
+        max-height: 255px;
+    }
+
+    .recomm-tabs .table-raw .body-scroll{
+        max-height: 400px;
+        height: auto;
+        margin-bottom: 20px;
+    }
+    .nav>li>a{
+        padding: 10px;
+    }
+
+    .renewal-report h4, 
+    .recommendation-top h4,
+    .topRecommendationCont h4{
+        margin-bottom: 0
+    }
+
+    .mobile .selectpage-dropdown{
+        display: none;
+    }
+
+    .grid-wrapper{
+        height: auto !important;
+        overflow: hidden;
+    }
+
+    .content{
+        width: 100%
+    }
+    
+    .content .row{
+        width: auto;
+        padding: 0;
+    }
+
+    .login-box{
+        transform: none;
+        -ms-transform : none;
+        height: 100%;
+        width: 100%;
+        left: 0;
+        top: 0;
+        border-radius:0;
+        max-width : 800px;
+    }
+
+    .login-box form{
+        width: auto;
+        margin: 0
+    }
+
+    .login-form ul{
+        margin-left: 0;
+        padding: 37px 37px 0;
+    }
+
+    .login-box .btn-login{
+        margin-right: 40px;
+    }
+
+    .recomm-tabs.similar-client{
+        height: auto;
+        overflow: visible;
+    }
+
+    .recomm-tabs .table-raw .body-scroll{
+        height: auto
+    }
+
+    .right-align{
+        padding-right: 15px !important;
+    }
+
+    .similar-client.recomm-tabs .table-raw ul li span.cell:nth-child(1){
+        width: 135px;
+    }
+
+    .ham-menu{
+        margin-top: -4px;
+        font-size: 32px;
+    }
+
+    .recommendationTopGrid .list-view,
+    .topRecommendationGrid .list-view{
+        max-height: 400px;
+        overflow: auto;
+    }
+
+    .recommendationGrid{
+        overflow: hidden;
+    }
+
+    .form-control{
+        height: 35px;
+    }
+
+    .typeahead .suggestion{
+        max-height: 140px;
+    }
+
+    .form-group.typeahead .suggestion{
+        top: 59px;
+    }
+
+    .typeahead .input-container .glyphicon{
+        font-size: 22px;
+    }
+
+    .dislike-reason-container{
+        width: 100%;
+        left: 0 !important;
+        top: 15px !important;
+        margin: 0 auto;
+        position: relative;
+        top: 17px;
+        color: #e4e4e4;
+        overflow: hidden;
+    }
+
+    .dislike-reason-container .tip{
+        display: none;
+    }
+
+    .btnToVote i{
+        font-size: 30px;
+    }
+
+    .labGrid .list-view li.list li.css-likeDislike strong{
+        display: none;
+    }
+
+    .leads-tabs{
+        clear: both;
+    }
+
+    .productRecommendationDetails,
+    .similarClientList{
+        height: 500px;
+        overflow-y: auto;
+        display: block;
+    }
+
+    .col-transition.select-client{
+        height: auto;
+    }
+
+    .renewalReportGrid .list-view{
+        max-height: 450px;
+        overflow: auto;
+    }
+
+    .labGrid .search-container{
+        float: none !important;
+        width:97%;
+        margin-top: 5px
+    }
+
+    .labGrid .ticket li.css-bySimilarClient,
+    .labGrid .ticket li.css-bySimilarProduct,
+    .labGrid .ticket li.css-bySalesPipeline,
+    .labGrid .ticket li.css-overallScore{
+        display: inline-block;
+        width: 22%;
+        min-height: 45px;
+    }
+
+    .labGrid .ticket li.css-bySimilarProduct,
+    .labGrid .ticket li.css-bySalesPipeline{
+        width: 28%    
+    }
+
+    .labGrid .ticket li.css-bySimilarClient span,
+    .labGrid .ticket li.css-bySimilarProduct span,
+    .labGrid .ticket li.css-bySalesPipeline span,
+    .labGrid .ticket li.css-overallScore span{
+        display: inline-block;
+        width: 100%;
+        padding-left:5px;
+    }
+
+    .recommendationGrid a{
+        color: #215f0e;
+        text-decoration: underline;
+    }
+
+}
+
+@media (min-width: 801px) {
+    body.dark{
+        background-color: rgba(50,143,138,1);
+        filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#467263, endColorstr=#809E81);
+        background-image: -moz-linear-gradient(top,rgba(70, 114, 99, 0.2) 0, rgba(128, 158, 129, 0.72) 25%,#382D31 100%);
+        background-image: linear-gradient(top,rgba(70, 114, 99, 0.2) 0, rgba(128, 158, 129, 0.72) 25%,#382D31 100%);
+        background-image: -webkit-linear-gradient(top,rgba(70, 114, 99, 0.2) 0, rgba(128, 158, 129, 0.72) 25%,#382D31 100%);
+        background-image: -o-linear-gradient(top,rgba(70, 114, 99, 0.2) 0, rgba(128, 158, 129, 0.72) 25%,#382D31 100%);
+        background-image: -ms-linear-gradient(top,rgba(70, 114, 99, 0.2) 0, rgba(128, 158, 129, 0.72) 25%,#382D31 100%);
+        background-image: -webkit-gradient(linear,right top,right bottom,color-stop(0,rgba(70, 114, 99, 0.2)),color-stop(25%,rgba(128, 158, 129, 0.72)),color-stop(100%,#382D31));
+        color: #e4e4e4;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+    }
+
+    .mobile-only{
+        display: none !important;
+    }
+
+    .desktop-only{
+        display: block !important
+    }
+
+    .login-box .help-statements{
+        margin-top: 0;
+        bottom: 15px;
+    }
+}
+
+/* IE 9 hacks */
+
+@media screen and (min-width:0\0) {
+    html, body, .init-app, .top-container{
+        height: 100%;
+        overflow-y: auto;
+    }
+    
+    .login-box form{
+        margin-left: 75px
+    }
+
+    .login-box{
+        background-color: #328f8a
+    }
+
+    .login-box .btn-login{
+        position: relative;
+        left: 75px;
+    }
+
+    .grid-vertical-scroll ul.grid,
+    .grid-vertical-scroll ul.grid li{
+        width: 100%
+    }
+
+    .height100{
+        height: 95% !important;
+        overflow: auto;
+    }
+
+}
+
+/* Firefox hacks */
+@media screen and (-moz-images-in-menus:0) {
+    .height100{
+        height: 95% !important;
+        overflow: auto;
+    }
+}
+
+
+.purchase-history .highcharts-data-labels text tspan{
+    display: none !important;
+}

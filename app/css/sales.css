@@ -1,0 +1,165 @@
+.leads-dashboard .mobile .selectpage-dropdown{
+    display: none;
+}
+
+.leads-dashboard .sales-badge-list{
+   margin: 0 -15px 0;
+   clear: both;
+}
+
+.leads-dashboard .badge-item{
+	padding:0;;
+    overflow: hidden;
+}
+
+.leads-dashboard .badge-item i{
+	font-size: 29px;
+    padding: 10px 0 10px 10px;
+    width: 16%;
+    float: left;
+}
+
+.leads-dashboard .badge-item span.label-badge{
+    float: left;
+    color: #333;
+    font-size: 16px;
+    position: relative;
+    top: 17px;
+    width: 54%;
+    text-shadow: 1px 1px #797979;
+}
+
+.leads-dashboard .badge-item span.number{
+	float: left;
+    width: 30%;
+    padding: 0;
+    position: relative;
+    text-align: center;
+    background: #000;
+    line-height: 53px;
+    font-size: 30px
+}
+
+.open-leads-recommendation{
+    padding: 10px;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.open-leads-recommendation h4{
+    margin-bottom: -22px;
+    margin-top: 5px;
+}
+
+.open-leads-recommendation .ticket{
+
+}
+
+.productRecommendationGrid .labGrid .grid-container{
+    min-height: auto;
+    margin-bottom: 10px;
+}
+
+.productRecommendationGrid .grid-vertical-scroll{
+    max-height: 196px;
+}
+
+.productRecommendationGrid  .labGrid .search-container{
+    float: right;  
+    top: -5px;
+}
+
+.productRecommendationGrid .labGrid li.body .nested-details:hover, 
+.productRecommendationGrid .labGrid li.body:hover, 
+.productRecommendationGrid .labGrid li.body:hover .nested-details,
+.productRecommendationGrid .labGrid li.row.body.selected, 
+.productRecommendationGrid .labGrid li.row.body.selected .nested-details, 
+.productRecommendationGrid .labGrid li.row.body.selected:nth-child(2n),
+.productRecommendationGrid .labGrid li.row.body:nth-child(2n){
+    background: none;
+    color: #e4e4e4;
+}
+
+.productRecommendationGrid .labGrid li.row span.cell,
+.renewalReportGrid .labGrid li.row span.cell{
+    float: none;
+    white-space: normal;
+}
+
+.top5{
+    padding: 1px 10px;
+    margin-top: 1px;
+}
+
+.renewals{
+    margin-top: 1px;
+}
+
+.leads-tabs{
+    border-bottom: 1px solid #2f2f30;
+    list-style-type:none;
+    margin: 0;
+    padding: 0;
+    margin-top:20px;
+}
+
+.leads-tabs li{
+    display: inline-block;
+    padding: 10px 20px;
+    margin-right: 10px;
+    cursor: pointer;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    text-shadow: 1px 1px #000;
+}
+
+.leads-tabs li.active,
+.leads-tabs li:hover{
+    background: #2f2f30;
+    box-shadow: 0 0px 5px 1px rgba(0,0,0,.7);
+}
+
+.renewal-report .table-raw ul li span.cell:nth-child(1){
+    width: 200px
+}
+
+.renewal-report .table-raw ul li span.cell:nth-child(2){
+    width: 40%
+}
+
+.renewal-report .table-raw ul li span.cell:nth-child(3){
+    width: 20%
+}
+
+.renewal-report .body-scroll{
+    height: 275px;
+    overflow: auto;
+}
+
+.renewals.box{
+    padding: 0
+}
+
+#renewal-client{
+    height: 360px;
+}
+
+.renewal-chart{
+    transition: all 1ms;
+}
+
+#renewal-product{
+    height: 325px;
+}
+
+.renewalReportGrid .grid-vertical-scroll{
+    max-height: 290px;
+}
+
+.renewalReportGrid .labGrid .search-container{
+    float: right;
+}
+
+.renewal-report h4{
+    margin-bottom: -27px;
+}

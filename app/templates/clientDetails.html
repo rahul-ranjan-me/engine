@@ -1,0 +1,245 @@
+<div class="top-container">
+
+	<header-directive headertext=" "></header-directive>
+	
+
+	<div class="content client-details clearfix">
+		<div class="col-md-12 height100">
+
+			<div class="page-header-cont clearfix">
+				<h1 class="clientName" ng-class="{'edit': isEdit}" ng-click="stopEvent($event)">
+					<typeahead fieldlabel="Name" placeholder="Search by client name" ng-if="prefetchedFilters" prefetched="prefetchedFilters.clients" api="{{clientSearchAPI}}" payload="searchPayload.clientName"></typeahead>
+
+					<span class="name-read" ng-click="newClientFetch('true')">{{clientDetails.clientName}}</span>
+
+					<span class="edit-button" ng-click="newClientFetch('true')"><i class="glyphicon glyphicon-pencil"></i></span>
+
+					<em class="save-cancel">
+						<span class="cancel-client" ng-click="saveCancelClient(false)"><i class="glyphicon glyphicon-remove-circle"></i></span>
+						<span ng-show="searchPayload.clientName" class="save-client" ng-click="saveCancelClient(true)"><i class="glyphicon glyphicon-ok-circle"></i></span>
+					</em>
+
+				</h1>
+				
+				<div class="other-details">
+					<em><strong>Region:</strong> <span>{{clientDetails.region}}</span></em>
+					<em><strong>Institution Type:</strong> <span>{{clientDetails.institutionType}}</span></em>
+					<em><strong>Type:</strong> <span>{{clientDetails.type}}</span></em>
+					<em><strong>No. of Products:</strong> <span>{{clientDetails.products.length}}</span></em>
+				</div>
+			</div>
+
+			<div class="row client-existing-details">
+
+				<!-- Existing products starts here -->
+				<div class="existing-product col-md-5">
+					<div class="box">
+						<h5>Existing products</h5>
+						<ul>
+							<li ng-repeat="(i, item) in clientDetails.products">
+								{{item.productFamily}}
+
+								<span ng-if="selectedSimilarClient" class="status-existing">
+									<span ng-if="!checkExisting(item.productFamily)">
+										<i class="glyphicon glyphicon-remove" ng-mouseover="toolTip($event, 'show', item.productFamily)" ng-mouseout="toolTip($event,'hide')"></i>
+									</span>
+									<span ng-if="checkExisting(item.productFamily)">
+										<i class="glyphicon glyphicon-ok"></i>
+									</span>
+								</span>
+
+							</li>
+						</ul>
+					</div>
+				</div>
+				<!-- Existing products starts here -->
+
+				<!-- Purchase history starts here -->				
+				<div class="purchase-history col-md-7">
+					<div class="box">
+						<h5>Purchase history</h5>
+						<div id="purchaseHistory"></div>
+					</div>
+				</div>
+				<!-- Purchase history ends here -->				
+
+			</div>
+
+			<!-- Tabs starts here -->
+			<div class="row recomm-tab">
+				<div class="col-md-12">
+					<ul class="nav nav-tabs">
+						<li role="presentation" ng-class="{'active' : selectedTab == 'recommProduct'}"><a href="#" id="recommProducts" ng-click="switchTab($event, 'recommProduct')">Recommended Product</a></li>
+						<li role="presentation" ng-class="{'active' : selectedTab == 'similarClientsAttributes'}">
+							<a href="#" id="similarClientsAttributes" ng-click="switchTab($event, 'similarClientsAttributes')">Similar Clients by Attributes</a>
+						</li>
+						<li role="presentation" ng-class="{'active' : selectedTab == 'similarClientsProducts'}">
+							<a href="#" id="similarClientsProducts" ng-click="switchTab($event, 'similarClientsProducts')">Similar Clients by Products</a>
+						</li>
+						<li role="presentation" ng-class="{'active' : selectedTab == 'similarClientSales'}">
+							<a href="#" id="similarClientSales" ng-click="switchTab($event, 'similarClientSales')">Similar Clients by Product Sales</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!-- Tabs ends here -->			
+
+			<!-- Recommended products starts here -->
+			<div class="row" ng-show="selectedTab == 'recommProduct'">
+				<div class="col-md-12 recomm-tabs recomm-products">
+					<div class="box">
+						
+						<label for="arrangeBy" class="arrangeBySales" ng-init="arrangeBy = false">
+							<input id="arrangeBy" type="checkbox" ng-true-value="true" ng-false-value="false" ng-model="arrangeBy" ng-change="arrangeBySales(arrangeBy)" />Products in sales pipeline
+						</label>
+
+						<grid-directive 
+							class="productRecommendationDetails"
+							grid="productRecommendationDetails"
+							rowselect="onClientRowSelect(row)"
+							pagesize="10000000"
+							noselect="true"
+							ng-if="productRecommendationDetails"
+							eventkey = "productRecommendationDetails"
+							nodata = "0 Record"
+							view="grid">
+						</grid-directive>
+
+					</div>
+				</div>
+			</div>
+			<!-- Recommended products ends here -->
+
+			<!-- Similar clients by products starts here -->
+			<div class="row" ng-show="selectedTab == 'similarClientsProducts'">
+				<div class="col-md-12 recomm-tabs similar-client">
+					<div class="box">
+						<div class="row">
+							<div class="col-md-12">
+								<p class="hint"><em>Please click on client name to see details.</em></p>
+							</div>
+
+							<div class="col-transition select-client" ng-class="{'col-md-12' : !selectedSimilarClient, 'col-md-9' : selectedSimilarClient}">
+
+								<grid-directive 
+									class="similarClientsProducts"
+									grid="similarClientsProducts"
+									rowselect="onSimilarClientSelect(row)"
+									pagesize="10000000"
+									ng-if="similarClientsProducts"
+									eventkey = "similarClientsProducts"
+									nodata = "0 Record"
+									view="grid">
+								</grid-directive>
+								
+								
+							</div>
+							<div class="col-transition product-similar-client col-md-3" ng-show="selectedSimilarClient">
+								<div class="table-raw">
+									<ul>
+										<li class="header">
+											<span class="cell">Product name</span>
+											<span class="cell">Status</span>
+										</li>
+									</ul>
+									<div class="body-scroll">
+										<ul>
+											<li ng-repeat="(i, item) in selectedSimilarClient.products">
+												<span class="cell">{{item}}</span>
+												<span class="cell" ng-if="!checkProduct(item)">
+													<i class="glyphicon glyphicon-remove" ng-mouseover="toolTip($event, 'show', item, clientDetails.clientName)" ng-mouseout="toolTip($event,'hide')"></i>
+												</span>
+												<span class="cell" ng-if="checkProduct(item)">
+													<i class="glyphicon glyphicon-ok"></i>
+												</span>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>					
+			</div>
+			<!-- Similar clients by products ends here -->
+
+
+			<!-- Similar clients by attributes starts here -->
+			<div class="row" ng-show="selectedTab == 'similarClientsAttributes'">
+				<div class="col-md-12 recomm-tabs similar-client">
+					<div class="box">
+						<div class="row">
+							<div class="col-md-12">
+								<p class="hint">
+									<em>Recommended Products:</em>
+									<select
+						 				ng-model = "selectedClientAttributes"
+						 				class="form-control similarClientDropdown"
+						 				ng-options="option.productFamily for option in similarClientByAttributes.recommendations"
+						 				ng-change="showSimilarClient(selectedClientAttributes, similarClientByAttributes)">
+							 			<option value="">Please select</option>			 			
+							 		</select>
+								</p>
+
+								<h5 ng-if="similarClientsAttributes.grid.length">Following similar clients have purchased this product:</h5>
+								<grid-directive 
+									class="similarClientsAttributes"
+									grid="similarClientsAttributes"
+									rowselect="onSimilarAttributeClientSelect(row)"
+									pagesize="10000000"
+									noselect="true"
+									ng-if="similarClientsAttributes.grid.length"
+									eventkey = "similarClientsAttributes"
+									nodata = "0 Record"
+									view="grid">
+								</grid-directive>
+							</div>
+						</div>
+					</div>
+				</div>					
+			</div>
+			<!-- Similar clients by attributes ends here -->
+
+			<!-- Similar clients by product sales starts here -->
+			<div class="row" ng-show="selectedTab == 'similarClientSales'">
+				<div class="col-md-12 recomm-tabs similar-client">
+					<div class="box">
+						<div class="row">
+							<div class="col-md-12">
+								<p class="hint">
+									<em>Recommended Products:</em>
+									<select
+						 				ng-model = "selectedProduct"
+						 				class="form-control similarClientDropdown"
+						 				ng-options="option.productFamily for option in similarClientSales"
+						 				ng-change="getSimilarClientsSoldProduct(selectedProduct)">
+							 			<option value="">Please select</option>			 			
+							 		</select>
+								</p>
+
+								<div class="productDescriptions clearfix" ng-if="productSoldToClients.length">
+									<h5>Products often sold with:</h5>
+									<ul>
+										<li ng-repeat="product in oftenSoldWith"><span class="circle"></span> {{product}}</li>
+									</ul>
+								</div>
+
+								<div class="productDescriptions clearfix" ng-if="productSoldToClients.length">
+									<h5>Clients who bought this product:</h5>
+									<ul>
+										<li ng-repeat="client in productSoldToClients"><span class="circle"></span> {{client}}</li>
+									</ul>
+								</div>
+								
+								
+							</div>
+						</div>
+					</div>
+				</div>					
+			</div>
+			<!-- Similar clients by product sales ends here -->
+
+
+		</div>
+	</div>
+</div>

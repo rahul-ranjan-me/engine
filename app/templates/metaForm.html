@@ -1,0 +1,126 @@
+<form class="meta-form" ng-class="{'form-inline': formtype == 'inline'}">
+	<ul>
+		<li ng-repeat="item in metadata" ng-class="item.type">
+
+			<div class="form-group" ng-if="item.type == 'text' || item.type == 'password'">
+			    <label for="{{ item.id }}">{{item.label}} <span ng-if="item.required" class="required">*</span></label>
+			    <input type="{{ item.type }}"
+			    	class="form-control"
+			    	id = "{{ item.id }}"
+			    	name = "{{ item.name }}"
+			    	ng-model = "payload[item.name]"
+			    	placeholder="{{ item.placeholder }}" 
+			    	ng-disabled = "item.disabled"
+			    	ng-change = "validate(item)"
+			    	placeholder="{{ item.placeholder }}"
+			    >
+			 </div>
+
+			 <div class="form-group date-container" ng-if="item.type == 'date'">
+			    <label for="{{ item.id }}">{{item.label}} <span ng-if="item.required" class="required">*</span></label>
+			    <datepicker 
+			    	placeholder="DD/MM/YYYY"
+			    	item = "item"
+			    	selecteddate = "payload[item.name]">
+			    </datepicker>
+			 </div>
+
+			 <div class="form-group" ng-if="item.type == 'seperator'">
+			    <hr />
+			 </div>
+
+			 <div class="form-group" ng-if="item.type == 'heading'">
+			    <h4>{{item.value}}</h4>
+			 </div>
+
+			 <div class="form-group" ng-if="item.type == 'textarea'">
+			    <label for="{{ item.id }}">{{item.label}} <span ng-if="item.required" class="required">*</span></label>
+			    <textarea type="{{ item.type }}"
+			    	class="form-control"
+			    	id = "{{ item.id }}"
+			    	name = "{{ item.name }}"
+			    	ng-model = "payload[item.name]"
+			    	rows = "{{ item.rows }}"
+			    	ng-disabled = "item.disabled"
+			    	placeholder="{{ item.placeholder }}"
+			    ></textarea>
+			 </div>
+
+			 <div ng-class="item.type" ng-if="item.type == 'checkbox' || item.type == 'radio'">
+			 	<label for="{{ item.id }}">
+			      	<input type="{{ item.type }}" 
+			      		id = "{{ item.id }}"
+			    		name = "{{ item.name }}"
+			    		ng-value="true"
+			    		ng-disabled = "item.disabled"
+			    		ng-model = "payload[item.name]"> 
+			    		{{item.label}}
+			    </label>
+			 </div>
+
+			 <div ng-class="item.type" ng-if="item.type == 'group' && item.groupType =='radio'">
+			 	<h5>{{item.label}} <span ng-if="item.required" class="required">*</span></h5>
+			 	<label ng-repeat="groupItem in item.groupItems" 
+			 		for = "{{ item.id }}_{{ groupItem.id }}"
+			 		class = "{{item.groupType }}-inline" >
+			 	  	<input type="{{ item.groupType }}" 
+			      		id = "{{ item.id }}_{{ groupItem.id }}"
+			    		name = "{{ item.name }}"
+			    		ng-value = "groupItem.id"
+			    		ng-disabled = "item.disabled"
+			    		ng-model = "payload[item.name]"> 
+			    		{{groupItem.label}}
+			    </label>
+			 </div>
+
+			 <div ng-class="item.type" ng-if="item.type == 'group' && item.groupType =='checkbox'">
+			 	<h5>{{item.label}} <span ng-if="item.required" class="required">*</span></h5>
+			 	<label ng-repeat="groupItem in item.groupItems" 
+			 		for = "{{ item.id }}_{{ groupItem.id }}"
+			 		class = "{{item.groupType }}-inline" >
+			 	  	<input type="{{ item.groupType }}" 
+			      		id = "{{ item.id }}_{{ groupItem.id }}"
+			    		name = "{{ item.name }}"
+			    		ng-model = "groupItem.value"
+			    		ng-disabled = "item.disabled"
+			    		ng-click = "updatePayload(item.name, groupItem.id, groupItem.value)"> 
+			    		{{groupItem.label}}
+			    </label>
+			 </div>
+				
+			<div ng-class="item.type" ng-if="item.type == 'select'">
+			 	<label for = "{{ item.id }}">{{item.label}} <span ng-if="item.required" class="required">*</span></label>
+			 	<span ng-if="item.selectType">
+			 		<select id="{{ item.id }}" 
+			 			ng-model = "payload[item.name]" 
+			 			class="form-control" 
+			 			multiple="multiple" 
+			 			ng-disabled = "item.disabled"
+			 			ng-options="option.name for option in item.options"></select>
+			 	</span>
+			 	<span ng-if="!item.selectType">
+			 		<select id="{{ item.id }}"
+			 				ng-model = "payload[item.name]"
+			 				class="form-control"
+			 				ng-options="option.name for option in item.options"
+			 				ng-disabled = "item.disabled"
+			 				ng-change="changeDropdown(item)">
+			 			<option value="">Please select</option>			 			
+			 		</select>
+			 	</span>
+			</div>
+
+			<div ng-class="item.type" ng-if="item.type == 'arraySelect'">
+			 	<label for = "{{ item.id }}">{{item.label}} <span ng-if="item.required" class="required">*</span></label>
+			 	<select id="{{ item.id }}" 
+			 		ng-model = "payload[item.name]"
+			 		class="form-control"
+			 		ng-disabled = "item.disabled"
+			 		ng-options="option for option in item.options">
+			 		<option value="">Please select</option>
+			 	</select>
+			</div>		 
+		
+		</li>
+	</ul>
+</form>

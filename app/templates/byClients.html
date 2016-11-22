@@ -1,0 +1,44 @@
+<div class="top-container">
+
+	<header-directive headertext=" "></header-directive>
+	
+
+	<div class="content recomm-clients clearfix">
+		<div class="col-md-12 height100">
+			<div class="search box clearfix">
+				<h4>Search your client</h4>
+				<form class="meta-form form-inline" autocomplete="false">
+					<ul class="search-controls">
+						<li class="col-md-3">
+							<typeahead fieldlabel="Name" ng-if="prefetchedFilters" prefetched="prefetchedFilters.clients" api="{{clientSearchAPI}}" payload="searchPayload.name"></typeahead>
+						</li>
+						<li class="col-md-3">
+							<typeahead fieldlabel="Region" ng-if="prefetchedFilters" prefetched="prefetchedFilters.regions" payload="searchPayload.region"></typeahead>
+						</li>
+						<li class="col-md-2">
+							<typeahead fieldlabel="Type" ng-if="prefetchedFilters" prefetched="prefetchedFilters.clientType" payload="searchPayload.type"></typeahead>
+						</li>
+						<li class="col-md-2">
+							<typeahead fieldlabel="Institution" ng-if="prefetchedFilters" prefetched="prefetchedFilters.instituionTypes" payload="searchPayload.institutionType"></typeahead>
+						</li>
+					</ul>
+				</form>
+				<button type="button" class="btn btn-success pull-right btn-search" ng-disabled="isSearchDisabled()" ng-click="searchByClient()">Search</button>
+			</div>
+
+
+			<div class="box">
+				<grid-directive 
+					class="recommendedByClient"
+					grid="recommendedByClient"
+					rowselect="onClientRowSelect(row)"
+					pagesize="10000000"
+					eventkey = "recommendedByClient"
+					nodata = "0 Record"
+					view="grid">
+				</grid-directive>
+			</div>
+
+		</div>
+	</div>
+</div>

@@ -1,0 +1,86 @@
+<div class="top-container">
+
+	<header-directive headertext=" "></header-directive>
+	
+
+	<div class="content leads-dashboard clearfix">
+		<div class="col-md-12 height100">
+			<div class="row sales-badge-list">
+
+				<div class="col-md-3 badge-item">
+					<i class="glyphicon glyphicon-open"></i><span class="label-badge">Open Opportunities</span><span class="number">{{leadCounts.openLeads}}</span></li>
+				</div>
+				<div class="col-md-3 badge-item">
+					<i class="glyphicon glyphicon-king"></i><span class="label-badge">Deals Won</span><span class="number">{{leadCounts.closedLeads}}</span></li>
+				</div>
+				<div class="col-md-3 badge-item">
+					<i class="glyphicon glyphicon-scissors"></i><span class="label-badge">Lost Opportunities</span><span class="number">{{leadCounts.lostLeads}}</span></li>
+				</div>
+				<div class="col-md-3 badge-item">
+					<i class="glyphicon glyphicon-alert"></i><span class="label-badge">Invalid Opportunities</span><span class="number">{{leadCounts.invalidLeads}}</span></li>
+				</div>
+
+			</div>
+
+			<note></note>
+
+			<ul class="leads-tabs">
+				<li ng-class="{'active' : selectedTab == 'newBusiness'}" ng-click="switchTab('newBusiness')">
+					New Business
+				</li>
+				<li ng-class="{'active' : selectedTab == 'renewals'}" ng-click="switchTab('renewals')">
+					Renewals
+				</li>
+			</ul>
+				
+			<div class="new-business-container tab-container" ng-show="selectedTab == 'newBusiness'">
+				<div class="top5 box">
+					<div id="chart-prediction"></div>
+				</div>
+
+
+				<div class="open-leads-recommendation box">
+					<h4>Product recommendations</h4>
+					<grid-directive 
+						class="productRecommendationGrid"
+						grid="productRecommendationGrid"
+						rowselect="onClientRowSelect(row)"
+						pagesize="10000000"
+						eventkey = "productRecommendationGrid"
+						ng-if = "productRecommendationGrid"
+						nodata = "0 Record"
+						view="grid">
+					</grid-directive>
+				</div>
+			</div>
+
+			<div class="renewals-client-container tab-container" ng-show="selectedTab == 'renewals'">
+				<div class="box renewals clearfix">
+					<div class="renewal-chart" ng-class="{'col-md-12': !renewalsObj, 'col-md-4': renewalsObj}">
+						<div id="renewal-client"></div>
+					</div>
+					<div class="renewal-report col-md-8" ng-show="renewalsObj">
+						<h4>Report:- {{renewalsType.toLowerCase()}}</h4>
+
+						<grid-directive 
+							class="renewalReportGrid"
+							grid="renewalReportGrid"
+							pagesize="10000000"
+							eventkey = "renewalReportGrid"
+							ng-if = "renewalReportGrid"
+							nodata = "0 Record"
+							noselect= "true"
+							view="grid">
+						</grid-directive>
+
+					</div>
+				</div>
+
+				<div class="box clearfix">
+					<div id="renewal-product"></div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>
